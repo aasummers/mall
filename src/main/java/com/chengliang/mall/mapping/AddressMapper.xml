@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chengliang.mall.dao.AddressMapper">
+  <resultMap id="BaseResultMap" type="com.chengliang.mall.entity.Address">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="rec_user_name" jdbcType="VARCHAR" property="recUserName" />
+    <result column="rec_user_phone" jdbcType="VARCHAR" property="recUserPhone" />
+    <result column="rec_user_address" jdbcType="VARCHAR" property="recUserAddress" />
+    <result column="rec_user_area" jdbcType="VARCHAR" property="recUserArea" />
+    <result column="is_default" jdbcType="INTEGER" property="isDefault" />
+  </resultMap>
+  <!-- 添加地址 -->
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.chengliang.mall.entity.Address">
+    insert into address (user_id, rec_user_name, rec_user_phone,
+                        rec_user_address, rec_user_area, is_default)
+    values (#{userId}, #{recUserName},#{recUserPhone}, #{recUserAddress},
+          #{recUserArea}, #{isDefault})
+  </insert>
+
+</mapper>

@@ -1,0 +1,97 @@
+## 服务器设置
+server:
+  context-path: /mall
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+## spring配置
+spring:
+  http:
+    # http请求编码格式
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
+
+  jackson:
+    # 时间序列化,jackson默认会序列化成yyyy-MM-dd HH:mm:ss格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+08
+    # 如果传递的数据有null,自动会进行排除过滤掉
+    default-property-inclusion: NON_NULL
+
+  ## redis集群设置
+  redis:
+    pool:
+      min-idle: 100
+      max-idle: 100
+      max-wait: -1
+      max-active: 1000
+    timeout: 6000
+    host: 127.0.0.1
+    port: 6379
+    database: 1
+    password: qds
+# 存放session的存储方式
+  session:
+    store-type: none
+# 数据源
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mall?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&serverTimezone=Hongkong
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    # 以下是druid的配置
+    # 初始化连接个数
+    initialSize: 5
+    # 最小连接个数
+    minIdle: 1
+    #maxIdle: 10
+    # 最大存活
+    maxActive: 100
+    # 最大等待时间
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    # 测试sql
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    # 监控配置
+    filters: stat,wall,log4j
+    useGlobalDataSourceStat: true
+
+mybatis:
+    # 别名包设置
+    type-aliases-package: com.chengliang.mall
+    # 查找mapping配置,去查找mapper配置文件
+    mapper-locations: classpath:com/chengliang/mall/mapping/*.xml
+    # 扫描typeHandlers的包
+    typeHandlersPackage: com.chengliang.mall.config.mybatis
+    # 设置执行模式（SIMPLE, REUSE, BATCH）,默认为SIMPLE
+    executorType: SIMPLE
+
+# mybatis日志设置
+logging:
+    level: debug
+
+mapper:
+    mappers:
+        - com.qds.optimize.config.database.BaseMapper
+    not-empty: false
+    identity: mysql
+
+# 分页设置
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+
+# 请求超时时间设置
+request:
+    timeout: 300000
