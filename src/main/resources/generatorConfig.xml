@@ -43,7 +43,7 @@
         </javaClientGenerator>
 
         <!-- 要生成哪些表 -->
-        <table tableName="address" domainObjectName="Address"
+        <table tableName="goods" domainObjectName="Goods"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="true"></table>

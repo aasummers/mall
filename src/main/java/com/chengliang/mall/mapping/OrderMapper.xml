@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chengliang.mall.dao.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.chengliang.mall.entity.Order">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_code" jdbcType="VARCHAR" property="orderCode" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_img" jdbcType="VARCHAR" property="goodsImg" />
+    <result column="goods_price" jdbcType="DECIMAL" property="goodsPrice" />
+    <result column="goods_promotion_price" jdbcType="DECIMAL" property="goodsPromotionPrice" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="rec_user_name" jdbcType="VARCHAR" property="recUserName" />
+    <result column="rec_user_phone" jdbcType="VARCHAR" property="recUserPhone" />
+    <result column="rec_user_address" jdbcType="VARCHAR" property="recUserAddress" />
+  </resultMap>
+  <insert id="insert" parameterType="com.chengliang.mall.entity.Order">
+    insert into order (id, order_code, goods_name, 
+      goods_img, goods_price, goods_promotion_price, 
+      create_time, state, user_id, 
+      rec_user_name, rec_user_phone, rec_user_address
+      )
+    values (#{id,jdbcType=INTEGER}, #{orderCode,jdbcType=VARCHAR}, #{goodsName,jdbcType=VARCHAR}, 
+      #{goodsImg,jdbcType=VARCHAR}, #{goodsPrice,jdbcType=DECIMAL}, #{goodsPromotionPrice,jdbcType=DECIMAL}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{recUserName,jdbcType=VARCHAR}, #{recUserPhone,jdbcType=VARCHAR}, #{recUserAddress,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chengliang.mall.entity.Order">
+    insert into order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="orderCode != null">
+        order_code,
+      </if>
+      <if test="goodsName != null">
+        goods_name,
+      </if>
+      <if test="goodsImg != null">
+        goods_img,
+      </if>
+      <if test="goodsPrice != null">
+        goods_price,
+      </if>
+      <if test="goodsPromotionPrice != null">
+        goods_promotion_price,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="recUserName != null">
+        rec_user_name,
+      </if>
+      <if test="recUserPhone != null">
+        rec_user_phone,
+      </if>
+      <if test="recUserAddress != null">
+        rec_user_address,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="orderCode != null">
+        #{orderCode,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsName != null">
+        #{goodsName,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsImg != null">
+        #{goodsImg,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsPrice != null">
+        #{goodsPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="goodsPromotionPrice != null">
+        #{goodsPromotionPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="recUserName != null">
+        #{recUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="recUserPhone != null">
+        #{recUserPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="recUserAddress != null">
+        #{recUserAddress,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

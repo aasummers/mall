@@ -1,5 +1,6 @@
 package com.chengliang.mall.web;
 
+import com.alibaba.fastjson.JSONObject;
 import com.chengliang.mall.dao.UserMapper;
 import com.chengliang.mall.entity.user;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,4 +26,16 @@ public class UserApi {
         int res = userMapper.userExist(user);
         return res+"";
     };
+
+    @RequestMapping("/userInfo")
+    public String userInfo(Integer userId){
+        user res = userMapper.userInfo(userId);
+        return JSONObject.toJSONString(res);
+    }
+
+    @RequestMapping("/changePasswd")
+    public String changePasswd(Integer userId, String newPW){
+        int res = userMapper.changePasswd(userId, newPW);
+        return JSONObject.toJSONString(res);
+    }
 }
