@@ -11,6 +11,8 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 import java.nio.charset.Charset;
 import java.util.List;
@@ -48,4 +50,12 @@ public class MallApplication extends WebMvcConfigurerAdapter {
 		registration.setOrder(1);
 		return registration;
 	}
+
+//	public InternalResourceViewResolver viewResolver(){
+//		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//		viewResolver.setPrefix("/WEB-INF/classes/views/");
+//		viewResolver.setSuffix(".jsp");
+//		viewResolver.setViewClass(JstlView.class);
+//		return viewResolver;
+//	}
 }

@@ -3,30 +3,33 @@ package com.chengliang.mall.entity;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
+import javax.persistence.*;
+@Table(name = "order")
 public class Order implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column(name = "orderCode")
     private String orderCode;
-
+    @Column(name = "goodsName")
     private String goodsName;
-
+    @Column(name = "goodsImg")
     private String goodsImg;
-
+    @Column(name = "goodsPrice")
     private BigDecimal goodsPrice;
-
+    @Column(name = "goodsPromotionPrice")
     private BigDecimal goodsPromotionPrice;
-
+    @Column(name = "createTime")
     private Date createTime;
-
+    @Column(name = "state")
     private Integer state;
-
+    @Column(name = "userId")
     private Integer userId;
-
+    @Column(name = "recUserName")
     private String recUserName;
-
+    @Column(name = "recUserPhone")
     private String recUserPhone;
-
+    @Column(name = "recUserAddress")
     private String recUserAddress;
 
     private static final long serialVersionUID = 1L;

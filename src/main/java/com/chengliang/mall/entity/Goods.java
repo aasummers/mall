@@ -2,20 +2,23 @@ package com.chengliang.mall.entity;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-
+import javax.persistence.*;
+@Table(name = "address")
 public class Goods implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column(name = "name")
     private String name;
-
+    @Column(name = "image")
     private String image;
-
+    @Column(name = "num")
     private Integer num;
-
+    @Column(name = "price")
     private BigDecimal price;
-
+    @Column(name = "promotionPrice")
     private BigDecimal promotionPrice;
-
+    @Column(name = "descripe")
     private String descripe;
 
     private static final long serialVersionUID = 1L;

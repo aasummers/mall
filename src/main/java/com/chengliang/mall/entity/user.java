@@ -1,12 +1,15 @@
 package com.chengliang.mall.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
-
+@Table(name = "order")
 public class user implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column(name = "name")
     private String name;
-
+    @Column(name = "password")
     private String password;
 
     private static final long serialVersionUID = 1L;

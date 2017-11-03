@@ -63,7 +63,16 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     # 监控配置
     filters: stat,wall,log4j
-    useGlobalDataSourceStat: true
+    useGlobalDataSourceStat: trues
+
+  #thymeleaf 模板
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: utf-8
+    contentType: text/html
+    cache: true
 
 mybatis:
     # 别名包设置
@@ -95,3 +104,5 @@ pagehelper:
 # 请求超时时间设置
 request:
     timeout: 300000
+
+
