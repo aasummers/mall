@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: '微软雅黑', Arial;
+  color: #666;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.heights {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+em,
+i {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+/*去掉苹果的默认UI来渲染按钮*/
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+input,
+button,
+select,
+option {
+  box-shadow: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+/*去除点击高亮效果*/
+a,
+button,
+input,
+select,
+img,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+select,
+input {
+  vertical-align: middle;
+}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024');
+  /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */ url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('iconfont.svg?t=1494552406024#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1.34400134rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: #fff;
+}
+.register {
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  font-size: 1.5960016rem;
+  color: #333;
+  text-align: center;
+  padding: 0.42000042rem 0rem;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.register .iconfont {
+  display: block;
+  float: left;
+  margin-left: 0.63000063rem;
+  font-size: 1.5960016rem;
+}
+.register .login {
+  display: block;
+  float: right;
+  margin-right: 0.63000063rem;
+}
+.register .phoneNum {
+  display: block;
+  float: right;
+  margin-right: 1.26000126rem;
+}
+header {
+  background-color: #fff;
+}
+.contentBox {
+  padding-bottom: 1.68000168rem;
+}
+.contentBox .address {
+  max-height: 7.56000756rem;
+  line-height: 3.36000336rem;
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+}
+.contentBox .address .lines {
+  display: block;
+  text-align: left;
+}
+.contentBox .address .left {
+  float: left;
+  margin-left: 1.26000126rem;
+  margin-right: 1.68000168rem;
+}
+.contentBox .address .right {
+  float: right;
+  margin-right: 1.26000126rem;
+}
+.contentBox .address .placeAddress {
+  font-size: 1.26000126rem;
+}
+.contentBox .addressMsg {
+  position: relative;
+}
+.contentBox .addressMsg .iconfont.left {
+  position: absolute;
+  top: 50%;
+  font-size: 2.01600202rem;
+  width: 2.1000021rem;
+  height: 2.1000021rem;
+  display: block;
+  left: 0;
+  margin-top: -0.42000042rem;
+}
+.contentBox .addressMsg .iconfont.right {
+  position: absolute;
+  top: 50%;
+  font-size: 2.01600202rem;
+  width: 2.1000021rem;
+  height: 2.1000021rem;
+  display: block;
+  right: 0;
+  margin-top: -1.05000105rem;
+}
+.contentBox .addressMsg .message {
+  overflow: hidden;
+  padding-left: 2.1000021rem;
+}
+.contentBox .addressMsg .message .text {
+  line-height: 2.1000021rem;
+  font-size: 1.17600118rem;
+  max-height: 10000rem;
+  max-width: 29.4000294rem;
+  word-wrap: break-word;
+}
+.contentBox .addressMsg .message .right {
+  float: right;
+  margin-right: 2.94000294rem;
+}
+.contentBox .orderBox {
+  line-height: 2.52000252rem;
+  height: 2.52000252rem;
+  overflow: hidden;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+.contentBox .orderBox .orderNumber,
+.contentBox .orderBox .orderState {
+  float: left;
+  margin-left: 1.26000126rem;
+  display: block;
+  font-size: 1.17600118rem;
+}
+.contentBox .orderBox .orderState {
+  float: right;
+  margin-right: 1.26000126rem;
+  color: red;
+}
+.contentBox .orderContent {
+  padding: 0.84000084rem;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  padding-bottom: 1.26000126rem;
+}
+.contentBox .orderContent .leftImgBox {
+  width: 4.2000042rem;
+  height: 4.2000042rem;
+  float: left;
+}
+.contentBox .orderContent .leftImgBox img {
+  width: 4.2000042rem;
+  height: 4.2000042rem;
+}
+.contentBox .orderContent .rightTextBox {
+  width: 18.48001848rem;
+  float: left;
+  padding: 0rem 0.84000084rem;
+  height: 4.2000042rem;
+  padding-top: 0;
+}
+.contentBox .orderContent .rightTextBox .textContext {
+  height: 3.02400302rem;
+  line-height: 1.51200151rem;
+}
+.contentBox .orderContent .rightTextBox .currentPrice {
+  color: red;
+  margin-right: 0.84000084rem;
+}
+.contentBox .orderContent .rightTextBox .originalPrice {
+  text-decoration: line-through;
+}
+.contentBox .orderTime {
+  height: 3.02400302rem;
+  line-height: 3.02400302rem;
+  text-align: left;
+  font-size: 1.00800101rem;
+  clear: both;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  padding-left: 0.84000084rem;
+  padding-right: 1.26000126rem;
+}
+.contentBox .orderTime .time {
+  float: right;
+}
+.contentBox .strut {
+  height: 6.3000063rem;
+}
+.contentBox .affirm {
+  width: 100%;
+  height: 6.3000063rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.contentBox .affirm .commodityNum {
+  text-align: right;
+  font-size: 1.17600118rem;
+  color: #999;
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  padding-right: 0.84000084rem;
+}
+.contentBox .affirm .commodityNum em {
+  font-size: 1.17600118rem;
+  color: #999;
+}
+.contentBox .affirm .buttonConfirm {
+  height: 3.78000378rem;
+  line-height: 3.78000378rem;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.contentBox .affirm .buttonConfirm .button {
+  display: block;
+  width: 12.6000126rem;
+  font-size: 1.34400134rem;
+  text-align: center;
+  float: right;
+  color: #fff;
+  background-color: #13C3AA;
+}

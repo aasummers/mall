@@ -1,0 +1,107 @@
+@baseFontSize: 23.8095;//该数据根据设计图多大尺寸，640用苹果5,750用苹果6，在谷歌上选择苹果版本，在HTML标签位置生成一个数据，填于此处
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+.px3rem(@name, @npx,@spx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem;
+}
+.px4rem(@name, @npx,@spx,@apx,@bpx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem @apx/@baseFontSize*1rem @bpx/@baseFontSize*1rem;
+}
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:'微软雅黑',Arial;color:#666;}
+body,html{width:100%;height:100%;
+//overflow:hidden;
+margin:0 auto;}
+.heights{position:fixed;top:0;left:0;}
+em,i{font-style: normal;}
+a{text-decoration:none;}
+ul,ol,li{list-style:none;}
+img{display:block;}
+/*去掉苹果的默认UI来渲染按钮*/
+input,select,textarea,button{font-family:inherit;}
+//iOS端样式
+input,button,select,option{box-shadow:none;-webkit-appearance:none;border:none;outline:none;}
+/*去除点击高亮效果*/
+a,button,input,select,img,label{-webkit-tap-highlight-color:transparent;}
+select, input{vertical-align:middle;}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ccc;}
+
+
+//图标字体
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024'); /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1494552406024#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  .px2rem(font-size,32);
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{background-color:#fff;}
+.register{ .px2rem(height,60);.px2rem(line-height,60);.px2rem(font-size,38);color:#333;text-align:center;.px3rem(padding,10,0);border-bottom:1px solid #ddd;position:relative;}
+.register{
+    .iconfont{display: block;float:left;.px2rem(margin-left,15);.px2rem(font-size,38);}
+    .login{display:block;float:right;.px2rem(margin-right,15)}
+    .phoneNum{display:block;float:right;.px2rem(margin-right,30)}
+}
+header{background-color:#fff;}
+.contentBox{.px2rem(padding-bottom,40);}
+.peopleCentre{.px3rem(padding,0,20);}
+.peopleCentre{
+    .lineBottom{.px2rem(height,80);.px2rem(line-height,80);border-bottom:1px solid #ddd;overflow:hidden;}
+    .userName{}
+    .companyName{float: right;.px2rem(height,80);.px2rem(line-height,80);.px2rem(width,430);.px2rem(font-size,28);}
+    .addressClass{float: left;.px2rem(height,80);.px2rem(line-height,40);.px2rem(width,500);.px2rem(font-size,28);}
+      //新增收货地址
+    .maxWidth{width:6em;}
+    .display{display: block;}
+    .name{.px2rem(font-size,28);color:#333;.px2rem(height,80);.px2rem(line-height,80);display: block;float:left;}
+    .iconfont.right{float:right;}
+}
+
+.passwordCentre{.px2rem(padding,20);}
+.passwordCentre{
+     .lineBottom{.px2rem(height,80);.px2rem(line-height,80);overflow:hidden;.px3rem(padding,5,0)}
+     .companyName{float: right;.px2rem(height,80);.px2rem(line-height,80);.px2rem(width,430);.px2rem(font-size,28);}
+     .display{display: block;}
+    .name{.px2rem(font-size,28);color:#333;.px2rem(height,80);.px2rem(line-height,80);display: block;float:left;}
+    .iconfont.right{float:right;}
+    //密码修改
+    .password{border:1px solid #ddd;.px2rem(line-height,56);.px2rem(height,60);.px2rem(width,580);.px2rem(font-size,28);}
+}
+.contentBox .saveBtn{display: block;width:80%;.px2rem(height,80);.px2rem(line-height,80);.px2rem(font-size,32);text-align: center;color:#fff;background-color:#13C3AA;margin: 0 auto;.px2rem(margin-top,60);.px2rem(border-radius,6)}
+
+//我的订单页面样式
+.orderFormParticulars{}
+.orderFormParticulars{
+    .tabList{overflow: hidden;.px2rem(height,80);.px2rem(line-height,80);border-bottom: 1px solid #ddd;}
+    .tabList{
+        .everyState{display: block;width:25%;text-align: center;.px2rem(font-size,28);color:#333;float:left;}
+        .active{background-color:#f4f4f4;}
+    }
+}
+//我的订单内容栏样式
+.orderFormContent{.px3rem(padding,10,20)}
+.orderFormContent{
+    .common{.px2rem(line-height,60);.px2rem(height,60);.px2rem(font-size,28);}
+    .common {
+        .number,.time,.money{.px2rem(font-size,28);}
+    }
+    .right{float:right;}
+    .status{text-align: right;color:red;border-bottom: 1px solid #ddd;}
+    .none{display: none;}
+}
+.contentBox{
+    //添加地址栏中默认按钮样式
+    .default{display: block;.px2rem(width,80);.px2rem(height,40);.px2rem(border-radius,20);float:right;border:1px solid #ddd;background-color:#fff;.px2rem(margin-top,20);transition:all 0.2s;}
+    .default .clickBtn{.px2rem(width,38);.px2rem(height,38);display:block;border-radius:50%;background-color:#fff;border:1px solid #ddd;margin-left:0;transition:all 0.2s;}
+    .active{background-color:red;}
+    .active .clickBtn{.px2rem(margin-left,40);transition:all 0.2s;}
+}

@@ -69,10 +69,10 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
-    mode: HTML5
+    mode: LEGACYHTML5
     encoding: utf-8
     contentType: text/html
-    cache: true
+    cache: false
 
 mybatis:
     # 别名包设置

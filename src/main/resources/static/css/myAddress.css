@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: '微软雅黑', Arial;
+  color: #666;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.heights {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+em,
+i {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+/*去掉苹果的默认UI来渲染按钮*/
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+input,
+button,
+select,
+option {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+/*去除点击高亮效果*/
+a,
+button,
+input,
+select,
+img,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+select,
+input {
+  vertical-align: middle;
+}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024');
+  /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */ url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('iconfont.svg?t=1494552406024#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1.34400134rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: #f0efed;
+}
+.register {
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  font-size: 1.5960016rem;
+  color: #333;
+  text-align: center;
+  padding: 0.42000042rem 0rem;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.register .iconfont {
+  display: block;
+  float: left;
+  margin-left: 0.63000063rem;
+  font-size: 1.42800143rem;
+}
+.register .manage,
+.register .save {
+  display: block;
+  float: right;
+  margin-right: 0.84000084rem;
+  font-size: 1.17600118rem;
+}
+.register .manage {
+  position: absolute;
+  right: 0rem;
+  top: 0.42000042rem;
+}
+header {
+  background-color: #fff;
+}
+.contentBox {
+  background-color: #EFEFEF;
+  padding-bottom: 4.2000042rem;
+}
+.contentBox .tabBox {
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+}
+.contentBox .tabBox li {
+  display: block;
+  width: 50%;
+  float: left;
+  line-height: 1.68000168rem;
+  height: 1.68000168rem;
+  font-size: 1.34400134rem;
+  background-color: #f9f9f9;
+  padding: 0.63000063rem 0rem;
+}
+.contentBox .tabBox li .text {
+  border-bottom: 4px solid transparent;
+}
+.contentBox .tabBox .active {
+  border-color: transparent;
+  background-color: #fff;
+}
+.contentBox .tabBox .active .text {
+  border-bottom: 4px solid #13c3aa;
+  height: 1.68000168rem;
+  line-height: 1.68000168rem;
+  padding-bottom: 0.42000042rem;
+}
+.contentBox .messageBox {
+  margin-top: 0.84000084rem;
+  background-color: #fff;
+  padding: 0.42000042rem 0.84000084rem;
+}
+.contentBox .addressMsg {
+  position: relative;
+}
+.contentBox .addressMsg .iconfont {
+  position: absolute;
+  top: 50%;
+  font-size: 2.01600202rem;
+  width: 2.1000021rem;
+  height: 2.1000021rem;
+  display: block;
+  left: 0;
+  margin-top: -0.42000042rem;
+}
+.contentBox .addressMsg .message {
+  overflow: hidden;
+  padding-left: 2.1000021rem;
+}
+.contentBox .addressMsg .message .text {
+  line-height: 2.1000021rem;
+  font-size: 1.17600118rem;
+  max-height: 10000rem;
+  max-width: 29.4000294rem;
+  word-wrap: break-word;
+}
+.contentBox .newAddress {
+  width: 100%;
+  height: 4.2000042rem;
+  line-height: 4.2000042rem;
+  font-size: 1.34400134rem;
+  color: #333;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  text-align: center;
+}
+.contentBox .newAddress .address {
+  display: block;
+  width: 100%;
+}
+.contentBox .newAddress .address .iconfont {
+  color: #13c3aa;
+  margin-right: 0.84000084rem;
+  vertical-align: -0.08400008rem;
+}
+.noOrders {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.51200151rem;
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  color: #666;
+  position: fixed;
+  left: 0;
+  top: 50%;
+  margin-top: -1.26000126rem;
+  font-weight: bold;
+  display: none;
+}
+.reminder,
+.reminders {
+  font-size: 1.17600118rem;
+  color: #fff;
+  text-align: center;
+  line-height: 3.36000336rem;
+  background-color: #7f7f7f;
+  height: 3.36000336rem;
+  width: 17.22001722rem;
+  border-radius: 0.25200025rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -8.61000861rem;
+  margin-top: -1.68000168rem;
+  opacity: 0;
+}
+.reminder.tanchu,
+.reminders.tanchu {
+  -webkit-animation: tanchu  3s;
+  animation: tanchu 3s;
+}
+@-webkit-keyframes tanchu {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.projectDanage {
+  width: 100%;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+}
+.projectDanage span {
+  font-size: 1.17600118rem;
+}
+.defaultAddress {
+  width: 1.26000126rem;
+  height: 1.26000126rem;
+  border: 1px solid #13C3AA;
+}
+.projectDanage .radio {
+  padding-left: 1.68000168rem;
+  position: relative;
+}
+.projectDanage .radio .radioIcon {
+  display: block;
+  width: 1.00800101rem;
+  height: 1.00800101rem;
+  border: 1px solid #13C3AA;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+.projectDanage .radio .active {
+  background-color: #13C3AA;
+  border-color: #666;
+}
+.rightCompileBox {
+  float: right;
+  margin-right: 1.26000126rem;
+}
+.rightCompileBox .compile {
+  margin-right: 1.26000126rem;
+}

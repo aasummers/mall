@@ -1,0 +1,120 @@
+@baseFontSize: 23.8095;//该数据根据设计图多大尺寸，640用苹果5,750用苹果6，在谷歌上选择苹果版本，在HTML标签位置生成一个数据，填于此处
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+.px3rem(@name, @npx,@spx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem;
+}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+body{background-color:#f4f4f4;}
+.mt20{.px2rem(margin-bottom,20)}
+//图片轮播区域样式
+.imgcarousel{
+    clear:both;
+    .swiper-container .swiper-wrapper img{width:100%;height:100%;.px2rem(height,560);}
+}
+//轮播圆点的大小
+.swiper-pagination-bullet{.px2rem(width,16);.px2rem(height,16);}
+//轮播当前选中点的颜色---原有颜色值
+.swiper-pagination-bullet{background-color:rgba(255,255,255,0.9)}
+.swiper-pagination-bullet-active{background:#fff;}
+
+
+//免费报价栏
+.freeoffer{.px2rem(height,180);.px2rem(padding-left,20);.px2rem(padding-right,20);.px2rem(line-height,180);background-color:#FFFFFF;
+    .flexBox{text-align:center;}
+    .flexBox a.flexBox-item1{display:inline-block;.px2rem(height,180);}
+    .flexBox a.flexBox-item1 img{margin:0 auto;.px2rem(width,100);.px2rem(height,100);.px2rem(margin-top,20);}
+    .flexBox a.flexBox-item1 span.text{width:100%;text-align:center;display:block;.px2rem(margin-top,15);.px2rem(height,28);.px2rem(line-height,28);.px2rem(font-size,24);color:#333;}
+}
+//装修推荐
+.allpadding{.px2rem(margin-top,20);background-color:#fff;.px2rem(padding,25);}
+.allpadding h3{.px2rem(font-size,32);color:#333;.px2rem(line-height,32);.px2rem(height,32);.px2rem(margin-bottom,25)}
+.recommended{
+    .flexBox a.flexBox-item1{display:inline-block;.px2rem(width,345);.px2rem(height,260);overflow:hidden;}
+    .flexBox a.flexBox-item1:first-child{.px2rem(margin-right,20);}
+    .flexBox a.flexBox-item1 img{width:100%;height:100%;}
+}
+//装修效果图
+.effectpicture{
+    h3 a{display:inline-block;float:right;.px2rem(font-size,28);color:#999;}
+    .imgtouch{clear:both;position:relative;
+        .swiper-container .swiper-wrapper img{.px2rem(border-radius,4);.px2rem(width,600);.px2rem(height,400);.px2rem(border-radius,8);}
+    }
+}
+#effectpicture .swiper-container.touch.swiper-container-horizontal{.px2rem(padding-bottom,10);}
+#effectpicture .swiper-container.touch.swiper-container-horizontal .swiper-wrapper{.px2rem(padding-bottom,10)}
+#effectpicture .swiper-slide-next{.px2rem(height,360);.px2rem(margin-top,20);.px2rem(margin-bottom,20);.px2rem(margin-left,30)}
+//装修效果图分页器样式
+#effectpicture .swiper-pagination.two.swiper-pagination-fraction{text-align: right;.px2rem(height,26);.px2rem(line-height,26);.px2rem(font-size,24);color:#666;position: absolute;.px2rem(bottom,0);right:0;}
+#effectpicture .swiper-pagination.two.swiper-pagination-fraction .swiper-pagination-total{.px2rem(margin-right,10);}
+//装修效果图右侧小遮罩层样式
+#effectpicture .imgtouch .swiper-container.touch .stratum{position: absolute;display: block;.px2rem(width,73);.px2rem(height,362);.px2rem(top,19);.px2rem(right,-3);background-color:rgba(223,223,223,0.6);z-index:5;.px2rem(border-top-left-radius,4);.px2rem(border-bottom-left-radius,4)}
+//3D体验馆
+.experience{
+    //现将vr视频的宽度高度写死（按照设计）以后按照视频宽高再做调整
+   .flexBox a.flexBox-item1{position: relative;.px2rem(width,710);.px2rem(height,300);overflow: hidden;} 
+   .flexBox a.flexBox-item1 img{width:100%;.px2rem(height,300);}
+   .flexBox a.flexBox-item1 img.absolute{position: absolute;.px2rem(width,80);.px2rem(height,80);.px2rem(top,72);.px2rem(left,315);}
+   .flexBox a.flexBox-item1 .textmessage{position: absolute;left:0;bottom:0;background-color:rgba(247,247,247,0.8);width:100%;}
+   .flexBox a.flexBox-item1 .textmessage h4{width:100%;.px2rem(font-size,26);color:#333;.px2rem(line-height,40);.px2rem(height,40);overflow:hidden;text-overflow: ellipsis;.px2rem(padding-left,15)}
+   .flexBox a.flexBox-item1 .textmessage p{width:100%;.px2rem(font-size,24);color:#666;.px2rem(line-height,40);.px2rem(height,40);overflow:hidden;text-overflow: ellipsis;.px2rem(padding-left,15)}
+}
+
+
+//服务流程
+.service{
+    .flexBox img.flexBox-item1{width: 100%;.px2rem(height,290);}
+    //原来是写的所有；后来改为一张静态图片；暂时不用
+    .flexBox .flexBox-item1{position:relative;text-align:center;.px2rem(height,145);}
+    .flexBox .flexBox-item1 img{display:block;margin:0 auto;.px2rem(width,80);.px2rem(height,80);}
+    .flexBox .flexBox-item1 span{display:block;.px2rem(font-size,20);color:#666;.px2rem(margin-top,20);}
+    .flexBox .flexBox-item1 .long{width:104%;}
+    .flexBox .flexBox-item1 .absolute{position:absolute;.px2rem(top,25);.px2rem(right,-14);.px2rem(width,15);.px2rem(height,28);}
+}
+//装修智库
+.process{
+    ul{overflow:hidden;width: 100%;}
+    ul li{width:49%;text-align:left;float:left;margin-bottom:2%;}
+    ul li.mr{margin-right:2%;}
+    ul li img{width: 100%;.px2rem(height,123);display: block;line-height:0;}
+}
+//页面底部样式代码边
+header.bgwhite{border:1px solid #ccc}
+.hotTel{.px2rem(height,90);width: 100%;background: #ffffff;.px2rem(margin-top,20);text-align:center;.px2rem(line-height,90);.px2rem(font-size,26);color:#333333;}
+.bottomtel{color:#13c3aa;.px2rem(font-size,30)}
+.bottomtel img{display: inline-block;.px2rem(height,39);.px2rem(width,39);.px2rem(margin-right,19);position: relative;.px2rem(top,10)}
+.copRight{.px2rem(height,120);width: 100%;text-align: center;}
+.copRight p{.px2rem(font-size,24);color:#999999;}
+.copRight p:first-of-type{.px2rem(margin-top,30);.px2rem(margin-bottom,15)}
+//j建材商城
+.lineStyle{position:relative;text-align: center;.px2rem(line-height,60);.px2rem(height,60);.px2rem(font-size,28)}
+.lineStyle .text{.px3rem(padding,0,10);background-color: #f4f4f4;position: relative;z-index: 1;}
+.lineStyle:before {position:absolute;content: '';display: block;width: 80%;border-bottom: 3px solid #ddd;top:50%;left:10%;z-index: 0;}
+.shoppingBox{width:96%;padding:2%;}
+.shoppingBox .imgbox{display: block;width:100%;position: relative;}
+.shoppingBox .imgbox img{width:100%;margin: 0 auto;.px2rem(height,720);.px2rem(margin-bottom,30)}
+.shoppingBox .imgbox.mt0 img {margin-bottom:0;}
+.describeBox{position: absolute;width:100%%;left:0;bottom:0;background-color: rgba(0,0,0,0.6);.px3rem(padding,10,0)}
+.describeBox .describe{color:#fff;.px2rem(line-height,30);.px2rem(max-height,90);.px2rem(font-size,28);.px3rem(padding,5,10);word-wrap: break-word; word-break: normal;}
+.describeBox .price{.px3rem(padding,5,10)}
+.describeBox .price .currentPrice{color:red;.px2rem(font-size,28);.px2rem(line-height,30);.px2rem(max-height,30);}
+.describeBox .price .originalCos{color:#999;.px2rem(font-size,28);.px2rem(line-height,30);.px2rem(max-height,30);text-decoration:line-through;}
+.indent{width: 100%;overflow: hidden;}
+.indent .orderForm{width:50%;display: block;float:left;}
+.indent .orderForm .imgbox{display: block;width:60%;margin: 0 auto;}
+.particulars{.px2rem(font-size,28);}
+.number,.number em{.px2rem(font-size,24)}
+.shoppingBox .price.color{.px2rem(margin-top,10)}
+.shoppingBox .price.color em{color: red;.px2rem(font-size,36)}
+.shoppingBox .price.color .currentPrice{.px2rem(font-size,30)}
+.pd20{.px2rem(padding-bottom,20)}
+.purchaseQuantity {overflow:hidden;}
+.purchaseQuantity .text{float: left;}
+.purchaseQuantity .subtract,.purchaseQuantity #number,.purchaseQuantity .add{display: block;width: 1em;text-align: center;.px2rem(font-size,28);float:left;}
+.purchaseQuantity .subtract{border: 1px solid #ddd;.px2rem(border-bottom-left-radius,4);.px2rem(border-top-left-radius,4);.px2rem(margin-left,100);}
+.purchaseQuantity .add{border: 1px solid #ddd;.px2rem(border-bottom-right-radius,4);.px2rem(border-top-right-radius,4);}
+.purchaseQuantity #number{border-top:1px solid #ddd;border-bottom:1px solid #ddd;width: 2em;}
+.btnBox{.px2rem(height,80);overflow: hidden;background-color: rgba(0,0,0,0.4);position: fixed;bottom:0;left:0;width: 100%;}
+.btnBox .rightBtn{.px2rem(width,200);.px2rem(height,80);.px2rem(line-height,80);.px2rem(font-size,36);color:#fff;background-color: #13C3AA;display: block;float: right;text-align: center;}
+.shoppingMall.fixed{.px2rem(padding-bottom,80)}

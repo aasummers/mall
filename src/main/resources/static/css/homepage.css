@@ -1,0 +1,434 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+body {
+  background-color: #f4f4f4;
+}
+.mt20 {
+  margin-bottom: 0.84000084rem;
+}
+.imgcarousel {
+  clear: both;
+}
+.imgcarousel .swiper-container .swiper-wrapper img {
+  width: 100%;
+  height: 100%;
+  height: 23.52002352rem;
+}
+.swiper-pagination-bullet {
+  width: 0.67200067rem;
+  height: 0.67200067rem;
+}
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.swiper-pagination-bullet-active {
+  background: #fff;
+}
+.freeoffer {
+  height: 7.56000756rem;
+  padding-left: 0.84000084rem;
+  padding-right: 0.84000084rem;
+  line-height: 7.56000756rem;
+  background-color: #FFFFFF;
+}
+.freeoffer .flexBox {
+  text-align: center;
+}
+.freeoffer .flexBox a.flexBox-item1 {
+  display: inline-block;
+  height: 7.56000756rem;
+}
+.freeoffer .flexBox a.flexBox-item1 img {
+  margin: 0 auto;
+  width: 4.2000042rem;
+  height: 4.2000042rem;
+  margin-top: 0.84000084rem;
+}
+.freeoffer .flexBox a.flexBox-item1 span.text {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-top: 0.63000063rem;
+  height: 1.17600118rem;
+  line-height: 1.17600118rem;
+  font-size: 1.00800101rem;
+  color: #333;
+}
+.allpadding {
+  margin-top: 0.84000084rem;
+  background-color: #fff;
+  padding: 1.05000105rem;
+}
+.allpadding h3 {
+  font-size: 1.34400134rem;
+  color: #333;
+  line-height: 1.34400134rem;
+  height: 1.34400134rem;
+  margin-bottom: 1.05000105rem;
+}
+.recommended .flexBox a.flexBox-item1 {
+  display: inline-block;
+  width: 14.49001449rem;
+  height: 10.92001092rem;
+  overflow: hidden;
+}
+.recommended .flexBox a.flexBox-item1:first-child {
+  margin-right: 0.84000084rem;
+}
+.recommended .flexBox a.flexBox-item1 img {
+  width: 100%;
+  height: 100%;
+}
+.effectpicture h3 a {
+  display: inline-block;
+  float: right;
+  font-size: 1.17600118rem;
+  color: #999;
+}
+.effectpicture .imgtouch {
+  clear: both;
+  position: relative;
+}
+.effectpicture .imgtouch .swiper-container .swiper-wrapper img {
+  border-radius: 0.16800017rem;
+  width: 25.2000252rem;
+  height: 16.8000168rem;
+  border-radius: 0.33600034rem;
+}
+#effectpicture .swiper-container.touch.swiper-container-horizontal {
+  padding-bottom: 0.42000042rem;
+}
+#effectpicture .swiper-container.touch.swiper-container-horizontal .swiper-wrapper {
+  padding-bottom: 0.42000042rem;
+}
+#effectpicture .swiper-slide-next {
+  height: 15.12001512rem;
+  margin-top: 0.84000084rem;
+  margin-bottom: 0.84000084rem;
+  margin-left: 1.26000126rem;
+}
+#effectpicture .swiper-pagination.two.swiper-pagination-fraction {
+  text-align: right;
+  height: 1.09200109rem;
+  line-height: 1.09200109rem;
+  font-size: 1.00800101rem;
+  color: #666;
+  position: absolute;
+  bottom: 0rem;
+  right: 0;
+}
+#effectpicture .swiper-pagination.two.swiper-pagination-fraction .swiper-pagination-total {
+  margin-right: 0.42000042rem;
+}
+#effectpicture .imgtouch .swiper-container.touch .stratum {
+  position: absolute;
+  display: block;
+  width: 3.06600307rem;
+  height: 15.2040152rem;
+  top: 0.7980008rem;
+  right: -0.12600013rem;
+  background-color: rgba(223, 223, 223, 0.6);
+  z-index: 5;
+  border-top-left-radius: 0.16800017rem;
+  border-bottom-left-radius: 0.16800017rem;
+}
+.experience .flexBox a.flexBox-item1 {
+  position: relative;
+  width: 29.82002982rem;
+  height: 12.6000126rem;
+  overflow: hidden;
+}
+.experience .flexBox a.flexBox-item1 img {
+  width: 100%;
+  height: 12.6000126rem;
+}
+.experience .flexBox a.flexBox-item1 img.absolute {
+  position: absolute;
+  width: 3.36000336rem;
+  height: 3.36000336rem;
+  top: 3.02400302rem;
+  left: 13.23001323rem;
+}
+.experience .flexBox a.flexBox-item1 .textmessage {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(247, 247, 247, 0.8);
+  width: 100%;
+}
+.experience .flexBox a.flexBox-item1 .textmessage h4 {
+  width: 100%;
+  font-size: 1.09200109rem;
+  color: #333;
+  line-height: 1.68000168rem;
+  height: 1.68000168rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.63000063rem;
+}
+.experience .flexBox a.flexBox-item1 .textmessage p {
+  width: 100%;
+  font-size: 1.00800101rem;
+  color: #666;
+  line-height: 1.68000168rem;
+  height: 1.68000168rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 0.63000063rem;
+}
+.service .flexBox img.flexBox-item1 {
+  width: 100%;
+  height: 12.18001218rem;
+}
+.service .flexBox .flexBox-item1 {
+  position: relative;
+  text-align: center;
+  height: 6.09000609rem;
+}
+.service .flexBox .flexBox-item1 img {
+  display: block;
+  margin: 0 auto;
+  width: 3.36000336rem;
+  height: 3.36000336rem;
+}
+.service .flexBox .flexBox-item1 span {
+  display: block;
+  font-size: 0.84000084rem;
+  color: #666;
+  margin-top: 0.84000084rem;
+}
+.service .flexBox .flexBox-item1 .long {
+  width: 104%;
+}
+.service .flexBox .flexBox-item1 .absolute {
+  position: absolute;
+  top: 1.05000105rem;
+  right: -0.58800059rem;
+  width: 0.63000063rem;
+  height: 1.17600118rem;
+}
+.process ul {
+  overflow: hidden;
+  width: 100%;
+}
+.process ul li {
+  width: 49%;
+  text-align: left;
+  float: left;
+  margin-bottom: 2%;
+}
+.process ul li.mr {
+  margin-right: 2%;
+}
+.process ul li img {
+  width: 100%;
+  height: 5.16600517rem;
+  display: block;
+  line-height: 0;
+}
+header.bgwhite {
+  border: 1px solid #ccc;
+}
+.hotTel {
+  height: 3.78000378rem;
+  width: 100%;
+  background: #ffffff;
+  margin-top: 0.84000084rem;
+  text-align: center;
+  line-height: 3.78000378rem;
+  font-size: 1.09200109rem;
+  color: #333333;
+}
+.bottomtel {
+  color: #13c3aa;
+  font-size: 1.26000126rem;
+}
+.bottomtel img {
+  display: inline-block;
+  height: 1.63800164rem;
+  width: 1.63800164rem;
+  margin-right: 0.7980008rem;
+  position: relative;
+  top: 0.42000042rem;
+}
+.copRight {
+  height: 5.04000504rem;
+  width: 100%;
+  text-align: center;
+}
+.copRight p {
+  font-size: 1.00800101rem;
+  color: #999999;
+}
+.copRight p:first-of-type {
+  margin-top: 1.26000126rem;
+  margin-bottom: 0.63000063rem;
+}
+.lineStyle {
+  position: relative;
+  text-align: center;
+  line-height: 2.52000252rem;
+  height: 2.52000252rem;
+  font-size: 1.17600118rem;
+}
+.lineStyle .text {
+  padding: 0rem 0.42000042rem;
+  background-color: #f4f4f4;
+  position: relative;
+  z-index: 1;
+}
+.lineStyle:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 80%;
+  border-bottom: 3px solid #ddd;
+  top: 50%;
+  left: 10%;
+  z-index: 0;
+}
+.shoppingBox {
+  width: 96%;
+  padding: 2%;
+}
+.shoppingBox .imgbox {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+.shoppingBox .imgbox img {
+  width: 100%;
+  margin: 0 auto;
+  height: 30.24003024rem;
+  margin-bottom: 1.26000126rem;
+}
+.shoppingBox .imgbox.mt0 img {
+  margin-bottom: 0;
+}
+.describeBox {
+  position: absolute;
+  width: 100%%;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.42000042rem 0rem;
+}
+.describeBox .describe {
+  color: #fff;
+  line-height: 1.26000126rem;
+  max-height: 3.78000378rem;
+  font-size: 1.17600118rem;
+  padding: 0.21000021rem 0.42000042rem;
+  word-wrap: break-word;
+  word-break: normal;
+}
+.describeBox .price {
+  padding: 0.21000021rem 0.42000042rem;
+}
+.describeBox .price .currentPrice {
+  color: red;
+  font-size: 1.17600118rem;
+  line-height: 1.26000126rem;
+  max-height: 1.26000126rem;
+}
+.describeBox .price .originalCos {
+  color: #999;
+  font-size: 1.17600118rem;
+  line-height: 1.26000126rem;
+  max-height: 1.26000126rem;
+  text-decoration: line-through;
+}
+.indent {
+  width: 100%;
+  overflow: hidden;
+}
+.indent .orderForm {
+  width: 50%;
+  display: block;
+  float: left;
+}
+.indent .orderForm .imgbox {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+}
+.particulars {
+  font-size: 1.17600118rem;
+}
+.number,
+.number em {
+  font-size: 1.00800101rem;
+}
+.shoppingBox .price.color {
+  margin-top: 0.42000042rem;
+}
+.shoppingBox .price.color em {
+  color: red;
+  font-size: 1.51200151rem;
+}
+.shoppingBox .price.color .currentPrice {
+  font-size: 1.26000126rem;
+}
+.pd20 {
+  padding-bottom: 0.84000084rem;
+}
+.purchaseQuantity {
+  overflow: hidden;
+}
+.purchaseQuantity .text {
+  float: left;
+}
+.purchaseQuantity .subtract,
+.purchaseQuantity #number,
+.purchaseQuantity .add {
+  display: block;
+  width: 1em;
+  text-align: center;
+  font-size: 1.17600118rem;
+  float: left;
+}
+.purchaseQuantity .subtract {
+  border: 1px solid #ddd;
+  border-bottom-left-radius: 0.16800017rem;
+  border-top-left-radius: 0.16800017rem;
+  margin-left: 4.2000042rem;
+}
+.purchaseQuantity .add {
+  border: 1px solid #ddd;
+  border-bottom-right-radius: 0.16800017rem;
+  border-top-right-radius: 0.16800017rem;
+}
+.purchaseQuantity #number {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  width: 2em;
+}
+.btnBox {
+  height: 3.36000336rem;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.btnBox .rightBtn {
+  width: 8.4000084rem;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  font-size: 1.51200151rem;
+  color: #fff;
+  background-color: #13C3AA;
+  display: block;
+  float: right;
+  text-align: center;
+}
+.shoppingMall.fixed {
+  padding-bottom: 3.36000336rem;
+}

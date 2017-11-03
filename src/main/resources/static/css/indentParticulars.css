@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: '微软雅黑', Arial;
+  color: #666;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.heights {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+em,
+i {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+/*去掉苹果的默认UI来渲染按钮*/
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+input,
+button,
+select,
+option {
+  box-shadow: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+/*去除点击高亮效果*/
+a,
+button,
+input,
+select,
+img,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+select,
+input {
+  vertical-align: middle;
+}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024');
+  /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */ url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('iconfont.svg?t=1494552406024#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1.34400134rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: #f0efed;
+}
+.register {
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  font-size: 1.5960016rem;
+  color: #333;
+  text-align: center;
+  padding: 0.42000042rem 0rem;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.register .iconfont {
+  display: block;
+  float: left;
+  margin-left: 0.63000063rem;
+  font-size: 1.5960016rem;
+}
+.register .login {
+  display: block;
+  float: right;
+  margin-right: 0.63000063rem;
+}
+.register .phoneNum {
+  display: block;
+  float: right;
+  margin-right: 1.26000126rem;
+}
+header {
+  background-color: #fff;
+}
+.contentBox {
+  background-color: #EFEFEF;
+  padding-bottom: 1.68000168rem;
+}
+.contentBox .messageBox {
+  background-color: #fff;
+  padding: 0.42000042rem 0rem;
+}
+.contentBox .tilName {
+  line-height: 3.36000336rem;
+  height: 3.36000336rem;
+  font-size: 1.34400134rem;
+  background-color: #fff;
+  text-indent: 0.84000084rem;
+  margin-bottom: 0.08400008rem;
+}
+.contentBox .tilName .text,
+.contentBox .tilName .text em {
+  font-size: 1.00800101rem;
+  color: #333;
+}
+.contentBox .tilName .orderFormState {
+  float: right;
+  margin-right: 0.84000084rem;
+  color: #00CC99;
+}
+.contentBox .messageBox .message {
+  overflow: hidden;
+  border-bottom: 2px solid #ddd;
+}
+.contentBox .messageBox .message .store {
+  display: block;
+  overflow: hidden;
+  float: left;
+  padding: 0.42000042rem 0rem;
+  width: 100%;
+}
+.contentBox .messageBox .message .store .imgBox {
+  display: block;
+  width: 2.1000021rem;
+  height: 2.1000021rem;
+  line-height: 0;
+  float: left;
+  overflow: hidden;
+  padding: 0rem 0.42000042rem;
+}
+.contentBox .messageBox .message .store .imgBox img {
+  width: 2.1000021rem;
+  height: 2.1000021rem;
+}
+.contentBox .messageBox .message .store .right {
+  float: right;
+}
+.contentBox .commodityMessage {
+  padding-left: 2.6%;
+  width: 97.4%;
+}
+.contentBox .commodityMessage .box,
+.contentBox .aggregateBox {
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+}
+.contentBox .commodityMessage .box > span,
+.contentBox .aggregateBox > span {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.17600118rem;
+}
+.contentBox .commodityMessage .box .commodityName {
+  width: 18.06001806rem;
+  text-align: left;
+}
+.contentBox .commodityMessage .box .commodityNum {
+  width: 3.78000378rem;
+  text-align: center;
+}
+.contentBox .commodityMessage .box .commodityPrice {
+  width: 7.14000714rem;
+  text-align: right;
+  padding-right: 0.42000042rem;
+}
+.contentBox .aggregateBox {
+  border-top: 1px solid #ddd;
+}
+.contentBox .aggregateBox .moneyNum {
+  float: right;
+  margin-right: 1.26000126rem;
+}
+.contentBox .aggregateNum,
+.contentBox .aggregateNum em {
+  color: #898989;
+}
+.contentBox .aggregateBox .moneyNum {
+  color: #333;
+}
+.contentBox .aggregateBox .moneyNum em {
+  color: red;
+}
+.contentBox .messageBox .message .text {
+  line-height: 1.68000168rem;
+  font-size: 1.17600118rem;
+  max-height: 10000rem;
+  max-width: 22.26002226rem;
+  word-wrap: break-word;
+  display: block;
+  float: left;
+}
+.contentBox .messageBox .message .iconfont {
+  font-size: 1.51200151rem;
+  float: right;
+  margin-top: 0.42000042rem;
+  font-size: 1.5960016rem;
+}
+.contentBox .messageBox .message .iconfont:first-child {
+  float: left;
+}
+.contentBox .address {
+  overflow: hidden;
+  line-height: 2.52000252rem;
+  max-height: 1000rem;
+  margin-left: 0.84000084rem;
+  border-bottom: 1px solid #ddd;
+}
+.contentBox .address:last-child {
+  border: none;
+}
+.contentBox .address span {
+  font-size: 1.17600118rem;
+}
+.contentBox .address .text {
+  display: block;
+  float: left;
+  color: #898989;
+  -webkit-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.contentBox .address .siteTxt,
+.contentBox .address .phoneNum {
+  display: block;
+  float: right;
+  width: 22.68002268rem;
+  line-height: 1.68000168rem;
+  padding: 0.42000042rem 0rem;
+  padding-right: 0.84000084rem;
+  text-indent: 0;
+  color: #333;
+}
+.awaitPayment,
+.affirmReceive {
+  line-height: 4.2000042rem;
+  height: 4.2000042rem;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: right;
+}
+.awaitPayment .btn,
+.affirmReceive .btn {
+  display: inline-block;
+  width: 8.4000084rem;
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  font-size: 1.17600118rem;
+  color: #fff;
+  text-align: center;
+  background-color: #00cc99;
+  border-radius: 0.42000042rem;
+  margin-right: 0.84000084rem;
+}
+.awaitPayment .cancel {
+  background-color: #fff;
+  color: #666;
+}
+.reminder,
+.reminders {
+  font-size: 1.17600118rem;
+  color: #fff;
+  text-align: center;
+  line-height: 3.36000336rem;
+  background-color: #7f7f7f;
+  height: 3.36000336rem;
+  width: 17.22001722rem;
+  border-radius: 0.25200025rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -8.61000861rem;
+  margin-top: -1.68000168rem;
+  opacity: 0;
+}
+.reminder.tanchu,
+.reminders.tanchu {
+  -webkit-animation: tanchu  3s;
+  animation: tanchu 3s;
+}
+@-webkit-keyframes tanchu {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

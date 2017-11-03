@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: '微软雅黑', Arial;
+  color: #666;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.heights {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+em,
+i {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+/*去掉苹果的默认UI来渲染按钮*/
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+input,
+button,
+select,
+option {
+  box-shadow: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+/*去除点击高亮效果*/
+a,
+button,
+input,
+select,
+img,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+select,
+input {
+  vertical-align: middle;
+}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024');
+  /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */ url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('iconfont.svg?t=1494552406024#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1.34400134rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: #f0efed;
+}
+.register {
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  font-size: 1.26000126rem;
+  color: #333;
+  text-align: center;
+  padding: 0.42000042rem 0rem;
+  border-bottom: 1px solid #ddd;
+}
+.register .iconfont {
+  display: block;
+  float: left;
+  margin-left: 0.63000063rem;
+  font-size: 1.5960016rem;
+}
+.register .login {
+  display: block;
+  float: right;
+  margin-right: 0.63000063rem;
+}
+header {
+  background-color: #fff;
+  font-size: 1.51200151rem;
+  max-height: 100rem;
+}
+.contentBox {
+  background-color: #fff;
+  padding-bottom: 1.68000168rem;
+}
+.contentMessage {
+  padding-top: 0.84000084rem;
+}
+.contentBox .mode {
+  overflow: hidden;
+  text-align: center;
+}
+.contentBox .mode li {
+  display: block;
+  float: left;
+  line-height: 2.52000252rem;
+  height: 2.52000252rem;
+  font-size: 1.17600118rem;
+  border: 2px solid #DDD8CE;
+  background-color: #f9f9f9;
+  padding: 0.63000063rem 0rem;
+  width: 100%;
+  border: none;
+}
+.contentBox .mode .active {
+  border-color: transparent;
+  background-color: #fff;
+}
+.contentBox .everyBox {
+  margin: 0rem 1.26000126rem;
+}
+.contentBox .phoneNnmber {
+  line-height: 3.36000336rem;
+  height: 3.36000336rem;
+  font-size: 1.34400134rem;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  padding: 0.84000084rem 0rem;
+}
+.contentBox .phoneNnmber .phone {
+  width: 18.9000189rem;
+  height: 2.35200235rem;
+  line-height: 2.35200235rem;
+  font-size: 1.34400134rem;
+  text-indent: 2em;
+}
+.contentBox .littleBox {
+  position: relative;
+  display: block;
+  float: left;
+}
+.contentBox .littleBox .phones {
+  position: absolute;
+  left: 0.42000042rem;
+  top: 0rem;
+  font-size: 1.76400176rem;
+}
+.contentBox .littleBox .close {
+  position: absolute;
+  right: 0.84000084rem;
+  top: 0;
+  display: none;
+}
+.contentBox .verification {
+  display: block;
+  float: right;
+  width: 10.08001008rem;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  text-align: center;
+  border-radius: 0.25200025rem;
+  margin-left: 0rem;
+  background-color: #cdcdcd;
+  color: #fff;
+  font-size: 1.26000126rem;
+  padding: 0rem 0rem;
+}
+.contentBox .verification.active {
+  color: #fff;
+  background-color: #13c3aa;
+}
+.contentBox .authCode {
+  width: 28.98002898rem;
+  font-size: 1.34400134rem;
+  text-indent: 2em;
+}
+.contentBox .text {
+  line-height: 3.36000336rem;
+  height: 3.36000336rem;
+  text-align: center;
+  padding: 0.84000084rem 0rem;
+  font-size: 1.00800101rem;
+}
+.contentBox .btnBox {
+  line-height: 3.36000336rem;
+  height: 3.36000336rem;
+  text-align: center;
+  margin-top: 0rem;
+}
+.contentBox .btnBox button {
+  width: 100%;
+  line-height: 3.36000336rem;
+  height: 3.36000336rem;
+  background-color: #13c3aa;
+  color: #fff;
+  font-size: 1.34400134rem;
+  border-radius: 0.25200025rem;
+}
+.contentBox .explain {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 1.68000168rem;
+  left: 0;
+}
+.contentBox .explain a {
+  color: #fff;
+}
+.contentBox .forgetBox {
+  line-height: 3.36000336rem;
+  text-align: right;
+  height: 3.36000336rem;
+}
+.contentBox .forgetBox .forget {
+  color: #fff;
+}
+.reminder,
+.reminders {
+  font-size: 1.17600118rem;
+  color: #fff;
+  text-align: center;
+  line-height: 3.36000336rem;
+  background-color: #7f7f7f;
+  height: 3.36000336rem;
+  width: 17.22001722rem;
+  border-radius: 0.25200025rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -8.61000861rem;
+  margin-top: -1.68000168rem;
+  opacity: 0;
+}
+.reminder.tanchu,
+.reminders.tanchu {
+  -webkit-animation: tanchu  3s;
+  animation: tanchu 3s;
+}
+@-webkit-keyframes tanchu {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

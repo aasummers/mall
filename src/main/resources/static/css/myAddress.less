@@ -1,0 +1,89 @@
+@baseFontSize: 23.8095;//该数据根据设计图多大尺寸，640用苹果5,750用苹果6，在谷歌上选择苹果版本，在HTML标签位置生成一个数据，填于此处
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+.px3rem(@name, @npx,@spx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem;
+}
+.px4rem(@name, @npx,@spx,@apx,@bpx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem @apx/@baseFontSize*1rem @bpx/@baseFontSize*1rem;
+}
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:'微软雅黑',Arial;color:#666;}
+body,html{width:100%;height:100%;
+//overflow:hidden;
+margin:0 auto;}
+.heights{position:fixed;top:0;left:0;}
+em,i{font-style: normal;}
+a{text-decoration:none;}
+ul,ol,li{list-style:none;}
+img{display:block;}
+/*去掉苹果的默认UI来渲染按钮*/
+input,select,textarea,button{font-family:inherit;}
+//iOS端样式
+input,button,select,option{box-shadow:none;border:none;outline:none;}
+/*去除点击高亮效果*/
+a,button,input,select,img,label{-webkit-tap-highlight-color:transparent;}
+select, input{vertical-align:middle;}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ccc;}
+
+
+//图标字体
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024'); /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1494552406024#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  .px2rem(font-size,32);
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{background-color:#f0efed;}
+.register{ .px2rem(height,60);.px2rem(line-height,60);.px2rem(font-size,38);color:#333;text-align:center;.px3rem(padding,10,0);border-bottom:1px solid #ddd;position:relative; }
+.register{
+	.iconfont{display: block;float:left;.px2rem(margin-left,15);.px2rem(font-size,34);}
+	.manage,.save{display:block;float:right;.px2rem(margin-right,20);.px2rem(font-size,28)}
+	.manage{position:absolute;.px2rem(right,0);.px2rem(top,10)}
+}
+header{background-color:#fff;}
+.contentBox{background-color:#EFEFEF;.px2rem(padding-bottom,100);}
+.contentBox{
+	.tabBox{overflow:hidden;text-align: center;background-color:#fff;}
+	.tabBox li{display:block;width:50%; float:left;.px2rem(line-height,40);.px2rem(height,40);.px2rem(font-size,32);background-color:#f9f9f9;.px3rem(padding,15,0); }
+	.tabBox li .text{border-bottom:4px solid transparent;}
+	.tabBox .active{border-color:transparent;background-color:#fff;}
+	.tabBox .active .text{border-bottom:4px solid #13c3aa;.px2rem(height,40);.px2rem(line-height,40);.px2rem(padding-bottom,10);}
+	.messageBox{.px2rem(margin-top,20);background-color:#fff;.px3rem(padding,10,20);}
+	.addressMsg{position:relative;}
+	.addressMsg .iconfont{position:absolute;top:50%;.px2rem(font-size,48);.px2rem(width,50);.px2rem(height,50);display:block;left:0;.px2rem(margin-top,-10);}
+	.addressMsg .message{overflow:hidden;.px2rem(padding-left,50);}
+	.addressMsg .message .text{.px2rem(line-height,50);.px2rem(font-size,28);max-height:10000rem;.px2rem(max-width,700);word-wrap: break-word;}
+//	.messageBox .message .text:last-child{display:inline-block;.px2rem(margin-left,30)}
+	//添加收餐地址
+	.newAddress{width:100%;.px2rem(height,100);.px2rem(line-height,100);.px2rem(font-size,32);color:#333;position:fixed;bottom:0;left:0;background-color:#fff;text-align:center;}
+	.newAddress .address{display:block;width:100%;}
+	.newAddress .address .iconfont{color:#13c3aa;.px2rem(margin-right,20);.px2rem(vertical-align,-2);}
+}
+//没有地址情况
+.noOrders{display:block;width:100%;text-align:center;.px2rem(font-size,36);.px2rem(height,60);.px2rem(line-height,60);color:#666;position:fixed;left:0;top:50%;.px2rem(margin-top,-30);font-weight:bold;display:none;}
+//提示信息
+.reminder,.reminders{.px2rem(font-size,28);color:#fff;text-align:center;.px2rem(line-height,80);background-color:#7f7f7f;.px2rem(height,80);.px2rem(width,410);.px2rem(border-radius,6);position:fixed;top:50%;left:50%;.px2rem(margin-left,-205);.px2rem(margin-top,-40);opacity: 0;}
+.reminder.tanchu,.reminders.tanchu { -webkit-animation: tanchu  3s; animation: tanchu 3s; }
+@-webkit-keyframes tanchu { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+//新增加20171013
+//地址管理样式
+.projectDanage{width:100%;.px2rem(height,80);.px2rem(line-height,80);}
+.projectDanage span{.px2rem(font-size,28)}
+.defaultAddress{.px2rem(width,30);.px2rem(height,30);border: 1px solid #13C3AA;}
+//默认地址选择样
+.projectDanage .radio{.px2rem(padding-left,40);position: relative;}
+.projectDanage .radio .radioIcon{;display: block;.px2rem(width,24);.px2rem(height,24);border:1px solid #13C3AA;position: absolute;left:0;top:0;border-radius: 50%;}
+.projectDanage .radio .active{background-color:#13C3AA;border-color:#666;}
+.rightCompileBox{float: right;.px2rem(margin-right,30)}
+.rightCompileBox .compile{.px2rem(margin-right,30)}

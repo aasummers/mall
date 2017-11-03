@@ -1,0 +1,82 @@
+@baseFontSize: 23.8095;//该数据根据设计图多大尺寸，640用苹果5,750用苹果6，在谷歌上选择苹果版本，在HTML标签位置生成一个数据，填于此处
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+.px3rem(@name, @npx,@spx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem;
+}
+.px4rem(@name, @npx,@spx,@apx,@bpx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem @apx/@baseFontSize*1rem @bpx/@baseFontSize*1rem;
+}
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:'微软雅黑',Arial;color:#666;}
+body,html{width:100%;height:100%;
+//overflow:hidden;
+margin:0 auto;}
+.heights{position:fixed;top:0;left:0;}
+em,i{font-style: normal;}
+a{text-decoration:none;}
+ul,ol,li{list-style:none;}
+img{display:block;}
+/*去掉苹果的默认UI来渲染按钮*/
+input,select,textarea,button{font-family:inherit;}
+//iOS端样式
+input,button,select,option{box-shadow:none;-webkit-appearance:none;border:none;outline:none;}
+/*去除点击高亮效果*/
+a,button,input,select,img,label{-webkit-tap-highlight-color:transparent;}
+select, input{vertical-align:middle;}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ccc;}
+
+
+//图标字体
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024'); /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1494552406024#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  .px2rem(font-size,32);
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body{background-color:#f0efed;}
+.register{ .px2rem(height,60);.px2rem(line-height,60);.px2rem(font-size,30);color:#333;text-align:center;.px3rem(padding,10,0);border-bottom:1px solid #ddd; }
+.register{
+	.iconfont{display: block;float:left;.px2rem(margin-left,15);.px2rem(font-size,38);}
+	.login{display:block;float:right;.px2rem(margin-right,15)}
+}
+header{background-color:#fff;.px2rem(font-size,36);max-height:100rem;}
+.contentBox{background-color:#fff;.px2rem(padding-bottom,40);}
+.contentMessage{.px2rem(padding-top,20);}
+.contentBox{
+	.mode{overflow:hidden;text-align: center;}
+	.mode li{display:block; float:left;.px2rem(line-height,60);.px2rem(height,60);.px2rem(font-size,28);border:2px solid #DDD8CE;background-color:#f9f9f9;.px3rem(padding,15,0); width:100%;border:none; }
+	.mode .active{border-color:transparent;background-color:#fff;}
+	.everyBox{.px3rem(margin,0,30);}
+	.phoneNnmber{.px2rem(line-height,80);.px2rem(height,80);.px2rem(font-size,32);overflow:hidden;border-bottom:1px solid #ddd;.px3rem(padding,20,0);}
+	.phoneNnmber .phone{.px2rem(width,450);.px2rem(height,56);.px2rem(line-height,56);.px2rem(font-size,32);text-indent:2em;}
+	.littleBox{position:relative;display:block;float:left;}
+	.littleBox .phones{position:absolute;.px2rem(left,10);.px2rem(top,0);.px2rem(font-size,42);}
+	.littleBox .close{position:absolute;.px2rem(right,20);top:0;display:none;}
+	.verification{display:block;float:right;.px2rem(width,240);.px2rem(height,80);.px2rem(line-height,80);text-align:center;.px2rem(border-radius,6);.px2rem(margin-left,0);background-color:#cdcdcd;color:#fff;.px2rem(font-size,30);.px3rem(padding,0,0)}
+	.verification.active{color: #fff; background-color: #13c3aa;}
+	.authCode{.px2rem(width,690);.px2rem(font-size,32);text-indent:2em;}
+	.text{.px2rem(line-height,80);.px2rem(height,80);text-align:center;.px3rem(padding,20,0);.px2rem(font-size,24);}
+	.btnBox{.px2rem(line-height,80);.px2rem(height,80);text-align:center;.px2rem(margin-top,0)}
+	.btnBox button{width:100%;.px2rem(line-height,80);.px2rem(height,80);background-color: #13c3aa;color:#fff;.px2rem(font-size,32);.px2rem(border-radius,6);}
+}
+.contentBox{
+	.explain{text-align:center;width:100%;position:fixed;.px2rem(bottom,40);left:0;}
+	.explain a{color: #fff;}
+	.forgetBox{.px2rem(line-height,80);text-align:right;.px2rem(height,80)}
+	.forgetBox .forget{color: #fff;}
+}
+//提示信息
+.reminder,.reminders{.px2rem(font-size,28);color:#fff;text-align:center;.px2rem(line-height,80);background-color:#7f7f7f;.px2rem(height,80);.px2rem(width,410);.px2rem(border-radius,6);position:fixed;top:50%;left:50%;.px2rem(margin-left,-205);.px2rem(margin-top,-40);opacity: 0;}
+.reminder.tanchu,.reminders.tanchu { -webkit-animation: tanchu  3s; animation: tanchu 3s; }
+@-webkit-keyframes tanchu { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }

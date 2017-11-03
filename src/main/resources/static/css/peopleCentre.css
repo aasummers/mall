@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: '微软雅黑', Arial;
+  color: #666;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.heights {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+em,
+i {
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+/*去掉苹果的默认UI来渲染按钮*/
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+}
+input,
+button,
+select,
+option {
+  box-shadow: none;
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+}
+/*去除点击高亮效果*/
+a,
+button,
+input,
+select,
+img,
+label {
+  -webkit-tap-highlight-color: transparent;
+}
+select,
+input {
+  vertical-align: middle;
+}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+@font-face {
+  font-family: "iconfont";
+  src: url('iconfont.eot?t=1494552406024');
+  /* IE9*/
+  src: url('iconfont.eot?t=1494552406024#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('iconfont.woff?t=1494552406024') format('woff'), /* chrome, firefox */ url('iconfont.ttf?t=1494552406024') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/ url('iconfont.svg?t=1494552406024#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 1.34400134rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: #fff;
+}
+.register {
+  height: 2.52000252rem;
+  line-height: 2.52000252rem;
+  font-size: 1.5960016rem;
+  color: #333;
+  text-align: center;
+  padding: 0.42000042rem 0rem;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.register .iconfont {
+  display: block;
+  float: left;
+  margin-left: 0.63000063rem;
+  font-size: 1.5960016rem;
+}
+.register .login {
+  display: block;
+  float: right;
+  margin-right: 0.63000063rem;
+}
+.register .phoneNum {
+  display: block;
+  float: right;
+  margin-right: 1.26000126rem;
+}
+header {
+  background-color: #fff;
+}
+.contentBox {
+  padding-bottom: 1.68000168rem;
+}
+.peopleCentre {
+  padding: 0rem 0.84000084rem;
+}
+.peopleCentre .lineBottom {
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+}
+.peopleCentre .companyName {
+  float: right;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  width: 18.06001806rem;
+  font-size: 1.17600118rem;
+}
+.peopleCentre .addressClass {
+  float: left;
+  height: 3.36000336rem;
+  line-height: 1.68000168rem;
+  width: 21.000021rem;
+  font-size: 1.17600118rem;
+}
+.peopleCentre .maxWidth {
+  width: 6em;
+}
+.peopleCentre .display {
+  display: block;
+}
+.peopleCentre .name {
+  font-size: 1.17600118rem;
+  color: #333;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  display: block;
+  float: left;
+}
+.peopleCentre .iconfont.right {
+  float: right;
+}
+.passwordCentre {
+  padding: 0.84000084rem;
+}
+.passwordCentre .lineBottom {
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  overflow: hidden;
+  padding: 0.21000021rem 0rem;
+}
+.passwordCentre .companyName {
+  float: right;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  width: 18.06001806rem;
+  font-size: 1.17600118rem;
+}
+.passwordCentre .display {
+  display: block;
+}
+.passwordCentre .name {
+  font-size: 1.17600118rem;
+  color: #333;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  display: block;
+  float: left;
+}
+.passwordCentre .iconfont.right {
+  float: right;
+}
+.passwordCentre .password {
+  border: 1px solid #ddd;
+  line-height: 2.35200235rem;
+  height: 2.52000252rem;
+  width: 24.36002436rem;
+  font-size: 1.17600118rem;
+}
+.contentBox .saveBtn {
+  display: block;
+  width: 80%;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  font-size: 1.34400134rem;
+  text-align: center;
+  color: #fff;
+  background-color: #13C3AA;
+  margin: 0 auto;
+  margin-top: 2.52000252rem;
+  border-radius: 0.25200025rem;
+}
+.orderFormParticulars .tabList {
+  overflow: hidden;
+  height: 3.36000336rem;
+  line-height: 3.36000336rem;
+  border-bottom: 1px solid #ddd;
+}
+.orderFormParticulars .tabList .everyState {
+  display: block;
+  width: 25%;
+  text-align: center;
+  font-size: 1.17600118rem;
+  color: #333;
+  float: left;
+}
+.orderFormParticulars .tabList .active {
+  background-color: #f4f4f4;
+}
+.orderFormContent {
+  padding: 0.42000042rem 0.84000084rem;
+}
+.orderFormContent .common {
+  line-height: 2.52000252rem;
+  height: 2.52000252rem;
+  font-size: 1.17600118rem;
+}
+.orderFormContent .common .number,
+.orderFormContent .common .time,
+.orderFormContent .common .money {
+  font-size: 1.17600118rem;
+}
+.orderFormContent .right {
+  float: right;
+}
+.orderFormContent .status {
+  text-align: right;
+  color: red;
+  border-bottom: 1px solid #ddd;
+}
+.orderFormContent .none {
+  display: none;
+}
+.contentBox .default {
+  display: block;
+  width: 3.36000336rem;
+  height: 1.68000168rem;
+  border-radius: 0.84000084rem;
+  float: right;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin-top: 0.84000084rem;
+  transition: all 0.2s;
+}
+.contentBox .default .clickBtn {
+  width: 1.5960016rem;
+  height: 1.5960016rem;
+  display: block;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-left: 0;
+  transition: all 0.2s;
+}
+.contentBox .active {
+  background-color: red;
+}
+.contentBox .active .clickBtn {
+  margin-left: 1.68000168rem;
+  transition: all 0.2s;
+}

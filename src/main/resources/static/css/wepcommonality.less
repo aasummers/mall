@@ -1,0 +1,161 @@
+@baseFontSize: 23.8095;//该数据根据设计图多大尺寸，640用苹果5,750用苹果6，在谷歌上选择苹果版本，在HTML标签位置生成一个数据，填于此处
+.px2rem(@name, @px) {
+    @{name}: @px / @baseFontSize * 1rem;
+}
+.px3rem(@name, @npx,@spx) {
+    @{name}: @npx/@baseFontSize*1rem @spx/@baseFontSize*1rem;
+}
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);font-family:'微软雅黑',Arial;color:#666;}
+body,html{width:100%;height:100%;
+//overflow:hidden;
+margin:0 auto;}
+.heights{position:fixed;top:0;left:0;}
+em,i{font-style: normal;}
+a{text-decoration:none;}
+ul,ol,li{list-style:none;}
+img{display:block;}
+/*去掉苹果的默认UI来渲染按钮*/
+input,select,textarea,button{font-family:inherit;}
+//iOS端样式
+input,button,select,option{box-shadow:none;-webkit-appearance:none;border:none;outline:none;}
+/*去除点击高亮效果*/
+a,button,input,select,img,label{-webkit-tap-highlight-color:transparent;}
+select, input{vertical-align:middle;}
+/*placeholder文本颜色*/
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#ccc;}
+//平均分配div宽度
+.flexBox {
+  width: 100%;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: box; 
+  display: flexbox; 
+  display: inline-flex;
+  display: flex;
+  flex-flow: row;
+  width: 100%; 
+//height: 100%; 
+}
+.flexBox .flexBox-item1 {
+  -webkit-box-flex: 1;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex: 1;
+  /* OLD - Firefox 19- */
+  -webkit-flex: 1;
+  /* Chrome */
+  -ms-flex: 1;
+  /* IE 10 */
+  flex: 1;
+  
+  -moz-box-flex:1.0; /* Firefox */
+-webkit-box-flex:1.0; /* Safari and Chrome */
+box-flex:1.0;
+}
+
+//公共头部导航样式
+header{.px2rem(height,80);overflow:hidden;border-bottom:2px solid #ddd;}
+header {background-color:#FFFFFF;
+//  position:relative;
+    .nav{.px2rem(height,80);position: relative;z-index:30;background-color:#fff;}
+    //搜索
+    .search{display: block;float:left;position: absolute;.px2rem(left,235);.px2rem(top,15)}
+    .search .searchInput{.px2rem(width,545);.px2rem(height,30);.px2rem(padding,10);.px2rem(font-size,24);color:#333;.px2rem(padding-left,60);background:url(../images/wap/newtimeanddel.png) no-repeat;.px3rem(background-position,19,12);.px3rem(background-size,27,116);background-color:#f4f4f4;.px2rem(border-radius,6)}
+     .search .searchInput.particularly{.px2rem(width,320)}
+     
+    //导航栏左侧部分
+    .left{.px2rem(top,17);.px2rem(left,20);}
+    .particulars{left: 50%;.px2rem(font-size,28);color:#333;margin-left: -2em;.px2rem(top,20)}
+    .left{
+        display:inline-block;z-index:20;float:left;position:absolute;
+        span{display:inline-block;float:left;}
+        .logo img{.px2rem(width,173);.px2rem(height,48);}
+        .city{.px2rem(margin-left,10);}
+        .city select,.city select option{.px2rem(font-size,24);color:#333;.px2rem(width,90);.px2rem(height,45);.px2rem(line-height,45);text-align:center;}
+        //小三角
+        select{appearance:none;-webkit-appearance:none; background: url("../images/wap/weptriangle.png") no-repeat scroll right center transparent; .px2rem(padding-left,10);.px2rem(background-size,16);}
+    }
+    .right{.px2rem(top,22);.px2rem(right,30);}
+    .right{
+        display:inline-block;z-index:20;float:right;position:absolute;
+        span{display:block;float:left;}
+        span:first-child{.px2rem(margin-right,20);}
+        .top_nav{.px2rem(padding,0);transform:rotate(0deg);transition:0.4s;}
+        .top_nav img{.px2rem(width,38);.px2rem(height,38);}
+        .people img{.px2rem(width,36);.px2rem(height,36);}
+        .top_nav.rotate{transform:rotate(90deg);transition:0.4s;}
+        
+    }
+    .navhurdle{position:fixed;top:-100%;left:0;width:100%;transition:all 1s;display: block;overflow: hidden;z-index:10;}
+    .navhurdle.abtop{.px2rem(top,80);z-index:10;transition:all 0.6s;}
+    .navhurdle ul{overflow:hidden;}
+    .navhurdle ul:first-child{.px2rem(margin-top,0);}
+    .navhurdle ul li{.px2rem(height,210);.px2rem(line-height,210);float:left;display:block;text-align:center;background:#fff;z-index:12;}
+    .navhurdle ul li:last-child{border-right:none;}
+    .navhurdle ul li img{margin:0 auto;.px2rem(width,125);.px2rem(height,85);.px2rem(margin-top,42);.px2rem(margin-bottom,16);z-index:13;}
+    .navhurdle ul li span{.px2rem(font-size,26);color:#333;width:100%;display: block;.px2rem(height,30);.px2rem(line-height,30);}
+    .navhurdle ul li.colorf4{background-color:#f4f4f4;}
+    .navhurdle ul li.colordd{background-color:#ddd;}
+    //遮罩层样式
+    .wapnavmodel{z-index:9;width:100%;height:100%;position:fixed;.px2rem(top,0);left: 0;width:100%;height:100%;display:block;background-color:rgba(0,0,0,0.6);display:none;}
+}
+//头部下方返回
+.head{.px2rem(height,90);.px2rem(line-height,90);text-align: center;.px2rem(font-size,32);color: #333333;border-bottom: 1px solid #d7d7d7;position: relative;background: #FFFFFF;}
+.head .back{display: inline-block;.px2rem(width,22);.px2rem(height,38);background:url(../images/wap/headback.png) no-repeat center center;background-size:100% 100%;position: absolute;.px2rem(left,40);.px2rem(top,25)}
+
+header.bggreen{border-bottom:none;}
+header.bggreen .nav{background:#13c3aa;}
+header.bggreen .left select{color: #fff;appearance:none;-webkit-appearance:none; background: url("../images/wap/weptrianglegreen.png") no-repeat scroll right center transparent; .px2rem(padding-left,10);.px2rem(background-size,16);}
+.head{.px2rem(height,90);.px2rem(line-height,90);text-align: center;.px2rem(font-size,32);color: #333333;border-bottom: 1px solid #d7d7d7;position: relative;background: #FFFFFF;}
+.head .back{display: inline-block;.px2rem(width,22);.px2rem(height,38);background:url(../images/wap/headback.png) no-repeat center center;background-size:100% 100%;position: absolute;.px2rem(left,40);.px2rem(top,25)}
+
+//页面右侧的定位返回头部栏
+.fix-nav-wrap{display:block;position:fixed;top:75%;.px2rem(right,20);display:none;z-index:9;}
+.fix-nav-wrap img{.px2rem(width,90);.px2rem(height,90);}
+
+//页面底部弹出报价栏
+.quote{width:100%;.px2rem(height,160);position:relative;background:url(../images/wap/wepbottomopen.png) center center no-repeat;background-size:100% 100%;position:fixed;left:0;bottom:0;z-index:8;}
+.quote .button{.px2rem(width,160);.px2rem(height,55);display: block;position:absolute;.px2rem(top,69);.px2rem(right,94);} 
+.quote .open{.px2rem(width,26);.px2rem(height,26);display: block;position:absolute;.px2rem(top,45);.px2rem(right,20);}
+
+//子页面最下方样式收藏、下载、预约
+footer.childfooter{position:fixed;bottom:0;left:0;z-index:8;.px2rem(height,90);width:100%;}
+footer.childfooter .content{overflow: hidden;background-color:#fff;}
+footer.childfooter .content .left,footer.childfooter .content .right{display:block;float:left;.px2rem(height,90);overflow: hidden;}
+footer.childfooter .content .left{width:52%;border-top:2px solid #e8e8e8;}
+footer.childfooter .content .right{width:48%;}
+footer.childfooter .content .left li{display:block;width:50%;float:left;position: relative;}
+footer.childfooter .content .left li img{display: block;margin: 0 auto;.px2rem(width,38);.px2rem(height,38);.px2rem(margin-top,10);}
+footer.childfooter .content .left li span{display: block;text-align: center;width:100%;.px2rem(font-size,20);color:#333;.px2rem(line-height,26);.px2rem(height,26);.px2rem(margin-top,12);}
+footer.childfooter .content .left li i{position: absolute;display: block;width:0px;.px2rem(height,50);border-right:2px solid #ddd;.px2rem(top,20);right:0;}
+footer.childfooter .content .right{float:right;width:48%;}
+footer.childfooter .content .right a{display:inline-block;.px2rem(line-height,90);text-align: center;.px2rem(font-size,30);color:#fff;background-color:#00c7a9;float:left;width:100%;}
+//下方分为在线服务、收藏、立即预约有的页面没有在线服务；所以给li添加class名rests分为两个的样式；
+footer.childfooter{background-color:#fff;}
+footer.childfooter .content.rests .left{width:35%;}
+footer.childfooter .content.rests .right{width:65%;}
+footer.childfooter .content.rests .left li{width:100%;}
+//手机号码已存在
+.inputBox .exist{position: absolute;.px2rem(width,120);.px2rem(height,75);.px2rem(line-height,75);.px2rem(right,15);color: #ff3300;.px2rem(font-size,24);display:none;}
+.inputBox .exist img {display: inline-block;position: relative;.px2rem(height,28);.px2rem(width,28);.px2rem(top,4);.px2rem(left,2)}
+.inputBox .exist em {color: #ff3300;position: relative;left: 0;top: 0;.px2rem(font-size,28);display: inline-block;}
+//没有数据样式
+.noData {position: absolute;bottom: 0;z-index: 999;color: #666;width: 100%; text-align: center;.px2rem(height,50);.px2rem(line-height,50);.px2rem(font-size,20);display: none;}
+//列表页面没有数据
+.nodataPic{width: 100%;text-align: center;.px2rem(margin-top,260)}
+.nodataPic img{display:block;.px2rem(width,260);.px2rem(height,145);margin: auto;}
+.nodataPic .note{display: inline-block;.px2rem(font-size,34);color:#aaaaaa;}
+//预约成功弹框
+.orderSuccess{ .px2rem(width,367); .px2rem(height,205); background: url(../images/wap/ordersuccess.png) no-repeat center center; background-size:100% 100%;.px2rem(border-radius,8); position: fixed; left: 50%; top: 50%; .px2rem(margin-top,-103); -webkit-transform: translateX(-50%); -webkit-animation: all 2s; -webkit-animation-delay: 1.5s; opacity: 0; z-index: 99999;}
+.tanchu { -webkit-animation: tanchu 5s; animation: tanchu 5s; } @-webkit-keyframes tanchu { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+//弹出框圆角
+.hint.tanchu{.px2rem(border-radius,10);.px2rem(font-size,30)}
+.hint.tanchu {
+  -webkit-animation: tanchu  1.5s;
+  animation: tanchu 1.5s;
+}
