@@ -10,6 +10,7 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
@@ -49,6 +50,12 @@ public class MallApplication extends WebMvcConfigurerAdapter {
 		registration.setName("commonFilter");
 		registration.setOrder(1);
 		return registration;
+	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		//将所有/static/** 访问都映射到classpath:/static/ 目录下
+		registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
 	}
 
 //	public InternalResourceViewResolver viewResolver(){

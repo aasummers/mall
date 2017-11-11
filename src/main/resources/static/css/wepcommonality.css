@@ -348,7 +348,7 @@ header.bggreen .left select {
   width: 100%;
   height: 6.72000672rem;
   position: relative;
-  background: url(../images/wap/wepbottomopen.png) center center no-repeat;
+  background: url(http://localhost:8080/mall/static/images/wap/wepbottomopen.png) center center no-repeat;
   background-size: 100% 100%;
   position: fixed;
   left: 0;
@@ -512,7 +512,7 @@ footer.childfooter .content.rests .left li {
 .orderSuccess {
   width: 15.41401541rem;
   height: 8.61000861rem;
-  background: url(../images/wap/ordersuccess.png) no-repeat center center;
+  background: url(http://localhost:8080/mall/images/wap/ordersuccess.png) no-repeat center center;
   background-size: 100% 100%;
   border-radius: 0.33600034rem;
   position: fixed;
