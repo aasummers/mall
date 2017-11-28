@@ -20,6 +20,8 @@ public class Goods implements Serializable {
     private BigDecimal promotionPrice;
     @Column(name = "descripe")
     private String descripe;
+    @Column(name = "goodsNo")
+    private String goodsNo;
 
     private static final long serialVersionUID = 1L;
 
@@ -77,6 +79,14 @@ public class Goods implements Serializable {
 
     public void setDescripe(String descripe) {
         this.descripe = descripe == null ? null : descripe.trim();
+    }
+
+    public String getGoodsNo() {
+        return goodsNo;
+    }
+
+    public void setGoodsNo(String goodsNo) {
+        this.goodsNo = goodsNo;
     }
 
     @Override

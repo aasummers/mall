@@ -5,12 +5,16 @@ import com.alibaba.fastjson.JSONObject;
 import com.chengliang.mall.dao.GoodsMapper;
 import com.chengliang.mall.entity.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class GoodsApi {
     @Autowired
     public GoodsMapper goodsMapper;
@@ -29,10 +33,11 @@ public class GoodsApi {
      * @param goodsId
      * @return
      */
-    @RequestMapping("/goodsDetails")
-    public String goodsDetails(Integer goodsId){
+    @RequestMapping(value = "/goodsDetails/{goodsId}", method = RequestMethod.GET)
+    public String goodsDetails(@PathVariable Integer goodsId, ModelMap map){
         Goods res = goodsMapper.queryGoodsDetails(goodsId);
-        return JSONObject.toJSONString(res);
+        map.put("res", res);
+        return "goodsDetails";
     }
 
 }
