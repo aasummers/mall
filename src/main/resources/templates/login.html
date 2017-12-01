@@ -1,0 +1,157 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--页面自适应-->
+		<script type="text/javascript">
+			var iScale = 1;
+			iScale = iScale / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="initial-scale=' + iScale + ",maximum-scale=" + iScale + ",minimum-scale=" + iScale + ',user-scalable=no,width=device-width,height=device-height">');
+			var iWidth = document.documentElement.clientWidth;
+			document.getElementsByTagName('html')[0].style.fontSize =parseInt(iWidth / 31.5) + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/registerShop.css}"/>
+		<title>登录</title>
+	</head>
+	<body>
+		<header class="register">
+			<i class="iconfont">&#xe697;</i><span class="text">登录</span>
+			<!--<a class="login" href="###">立即注册</a>-->
+		</header>
+		<div class="contentBox">
+			<ul class="mode">
+				<li>手机验证登录</li>
+				<!--<li>美团账号登录</li>-->
+			</ul>
+			<div class="contentMessage">
+				<div class="everyBox">
+					<p class="phoneNnmber">
+						<span class="littleBox">
+							<i class="iconfont phones">&#xe737;</i>
+							<input type="text" name="" class="phone" placeholder="请输入手机号" maxlength="11" />
+							<i class="iconfont close">&#xe86d;</i>
+						</span>
+						<input type="button" class="verification" disabled="disabled" value="获取验证码" />
+					</p>
+					<p class="phoneNnmber">
+						<span class="littleBox">
+							<i class="iconfont phones">&#xe6b4;</i>
+							<input type="text" name="" class="authCode" placeholder="请输入短信验证码" maxlength="6" />
+							<i class="iconfont close">&#xe86d;</i>
+						</span>
+					</p>
+					<p class="text">未注册过的手机将自动注册新会员</p>
+					<p class="btnBox">
+						<button>登录</button>
+					</p>
+				</div>
+				<div class="everyBox" style="display:none;">
+					<p class="phoneNnmber">
+						<span class="littleBox">
+							<i class="iconfont phones">&#xe614;</i>
+							<input type="text" name="" class="authCode" placeholder="美团账户(手机/邮箱/用户名)" />
+							<i class="iconfont close">&#xe86d;</i>
+						</span>
+					</p>
+					<p class="phoneNnmber">
+						<span class="littleBox">
+							<i class="iconfont phones">&#xe61b;</i>
+							<input type="password" name="" class="authCode" placeholder="请输入密码" />
+							<i class="iconfont close">&#xe86d;</i>
+						</span>
+					</p>
+					<p class="btnBox">
+						<button>登录</button>
+					</p>
+					<p class="forgetBox"><a href="###" class="forget">忘记密码</a></p>
+				</div>
+			</div>
+			<!--<p class="explain">
+				<span class="text">说明:注册/登录说明您已同意<a href="###">《美团用户协议》</a></span>
+			</p>-->
+		</div>
+	</body>
+	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('.contentBox .mode li').click(function(){
+			var index=$(this).index();
+			$(this).addClass("active").siblings().removeClass("active");
+			$('.contentMessage .everyBox').eq(index).show().siblings().hide();
+		});
+		$('.phoneNnmber input').focus(function(){
+			var val=$(this).val();
+			$(this).siblings('.close').show();
+		});
+		$('.phoneNnmber input').blur(function(){
+			var val=$(this).val();
+			if(val!=''){
+				$(this).siblings('.close').show();
+			}else{
+				$(this).siblings('.close').hide();
+			}
+		});
+		$('.phoneNnmber .close').click(function(){
+			$(this).siblings('input').val('');
+			$('.verification').removeClass('active');
+//			$('.verification').attr('disabled','disabled');
+			$(this).hide();
+		});
+		$('input.phone').blur(function(){
+			if(!(/^1[3|4|5|7|8]\d{9}$/.test($(".phone").val()))) {
+//				$(this).siblings('.verification').attr('disabled','disabled');
+	            clearTimeout();
+			    $("body").append('<p class="reminder tanchu">手机号码不正确</p>');
+				 setTimeout(function(){
+				 	$('.reminder').remove() 
+				 }, 3000);
+				return false;
+			}else{
+//				alert("正确了");
+				$(this).parent().siblings('.verification').addClass('active');
+				$('.verification').removeAttr('disabled');
+			}
+		});
+		$(".btnBox button").click(function(){
+			if(!(/^\d{6}$/.test($(".authCode").val()))){
+				clearTimeout();
+			    $("body").append('<p class="reminder tanchu">验证码错误</p>');
+				 setTimeout(function(){
+				 	$('.reminder').remove() 
+				 }, 3000);
+			}else{
+				alert("填写正确");
+			}
+		})
+		
+		 var time =59;
+		 $(".verification").click(function(){
+			$(this).removeClass("active");
+			timer = setInterval("CountDown()",1000);
+			$('.verification').attr("disabled","disabled");
+		 });
+		 function CountDown(){ 
+			if(time>0){ 
+				$(".verification").val(time+"s后重新获取");
+				time-=1
+			}else{ 
+				clearInterval(timer); 
+				$(".verification").val("获取验证码");
+				$(".verification").addClass("active");
+				$('.verification').removeAttr('disabled');
+				return time=59;
+			} 
+		} 
+		//提示框函数
+//		function Tip(){
+//		    clearTimeout();
+//		    setTimeout(function(){
+//		        $(".reminders").fadeOut(300, function(){ $(this).remove();console.log($(this))});
+//		    });
+//		     
+//		};
+	</script>
+</html>

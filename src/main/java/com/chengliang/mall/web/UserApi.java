@@ -4,13 +4,21 @@ import com.alibaba.fastjson.JSONObject;
 import com.chengliang.mall.dao.UserMapper;
 import com.chengliang.mall.entity.user;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 public class UserApi {
     @Autowired
     private UserMapper userMapper;
+
+
+    @RequestMapping("/toLogin")
+    public String toLogin(){
+        return "login";
+    };
 
     /**
      * 用户登录
@@ -27,10 +35,16 @@ public class UserApi {
         return res+"";
     };
 
-    @RequestMapping("/userInfo")
-    public String userInfo(Integer userId){
+    /**
+     * 个人中心
+     * @param userId
+     * @return
+     */
+    @RequestMapping("/personalCenter")
+    public String userInfo(Integer userId, ModelMap map){
         user res = userMapper.userInfo(userId);
-        return JSONObject.toJSONString(res);
+        map.put("user", res);
+        return "personalCenter";
     }
 
     @RequestMapping("/changePasswd")

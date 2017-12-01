@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chengliang.mall.dao.OrderGoodsMapper">
+  <resultMap id="BaseResultMap" type="com.chengliang.mall.entity.OrderGoods">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="orderCode" jdbcType="VARCHAR" property="ordercode" />
+    <result column="goodsName" jdbcType="VARCHAR" property="goodsname" />
+    <result column="goodsImg" jdbcType="VARCHAR" property="goodsimg" />
+    <result column="goodsPrice" jdbcType="VARCHAR" property="goodsprice" />
+    <result column="goodsPromotionPrice" jdbcType="VARCHAR" property="goodspromotionprice" />
+  </resultMap>
+  <insert id="insert" parameterType="com.chengliang.mall.entity.OrderGoods">
+    insert into order_goods (id, orderCode, goodsName, 
+      goodsImg, goodsPrice, goodsPromotionPrice
+      )
+    values (#{id,jdbcType=INTEGER}, #{ordercode,jdbcType=VARCHAR}, #{goodsname,jdbcType=VARCHAR}, 
+      #{goodsimg,jdbcType=VARCHAR}, #{goodsprice,jdbcType=VARCHAR}, #{goodspromotionprice,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.chengliang.mall.entity.OrderGoods">
+    insert into order_goods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="ordercode != null">
+        orderCode,
+      </if>
+      <if test="goodsname != null">
+        goodsName,
+      </if>
+      <if test="goodsimg != null">
+        goodsImg,
+      </if>
+      <if test="goodsprice != null">
+        goodsPrice,
+      </if>
+      <if test="goodspromotionprice != null">
+        goodsPromotionPrice,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ordercode != null">
+        #{ordercode,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsname != null">
+        #{goodsname,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsimg != null">
+        #{goodsimg,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsprice != null">
+        #{goodsprice,jdbcType=VARCHAR},
+      </if>
+      <if test="goodspromotionprice != null">
+        #{goodspromotionprice,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
