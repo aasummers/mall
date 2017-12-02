@@ -1,0 +1,96 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--页面自适应-->
+		<script type="text/javascript">
+			var iScale = 1;
+			iScale = iScale / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="initial-scale=' + iScale + ",maximum-scale=" + iScale + ",minimum-scale=" + iScale + ',user-scalable=no,width=device-width,height=device-height">');
+			var iWidth = document.documentElement.clientWidth;
+			document.getElementsByTagName('html')[0].style.fontSize = iWidth / 31.5 + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/myAddress.css}"/>
+		<title></title>
+	</head>
+	<body>
+		<header class="register">
+			<i class="iconfont">&#xe697;</i><span class="text">我的收货地址</span><span class="manage">管理</span>
+		</header>
+		<div class="contentBox">
+			<div class="messageBox">
+				<div class="addressMsg">
+					<i class="iconfont">&#xe600;</i>
+					<p class="message ">
+						<span class="text">丁<em>先生</em></span><span class="text">18001393832</span>
+					</p>
+					<p class="message ">
+						<span class="text">北京市 亦庄 经海五路科创十一街数字工场6号楼7层北京市 亦庄 经海五路科创十一街数字工场6号楼7层</span>
+					</p>
+				</div>
+				<div class="projectDanage">
+					<span class="radio"><i class="radioIcon" ></i>默认地址</span>
+					<div class="rightCompileBox">
+						<span class="compile" onclick="compile()">编辑</span>
+						<span class="delete" onclick="del(this)">删除</span>
+					</div>
+				</div>
+			</div>
+			<div class="messageBox">
+				<div class="addressMsg">
+					<i class="iconfont">&#xe600;</i>
+					<p class="message ">
+						<span class="text">丁<em>先生</em></span><span class="text">18001393832</span>
+					</p>
+					<p class="message ">
+						<span class="text">北京市 亦庄 经海五路科创十一街数字工场6号楼7层</span>
+					</p>
+				</div>
+				<div class="projectDanage">
+					<span class="radio"><i class="radioIcon" ></i>默认地址</span>
+					<div class="rightCompileBox">
+						<span class="compile" onclick="compile()">编辑</span>
+						<span class="delete" onclick="del(this)">删除</span>
+					</div>
+				</div>
+			</div>
+			<div class="newAddress">
+				<a href="###" class="address"><i class="iconfont">&#xe711;</i><span class="text">添加收货地址</span></a>
+			</div>
+		</div>
+		<p class="noOrders"> 暂无收货地址 </p>
+	</body>
+	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){ 
+			show();
+		});
+		//暂无收货地址显示及隐藏
+		function show(){
+			var len=$(".contentBox .messageBox").length;
+			if(len<=0){
+				$(".noOrders").css("display","block");
+			}else{
+				$(".noOrders").css("display","none");
+			}
+		}
+		$('.contentBox .tabBox li').click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+		$(".projectDanage .radio").click(function(){
+			$(this).parents(".messageBox").siblings().find(".radioIcon").removeClass("active");
+			$(this).find(".radioIcon").addClass("active");
+		});
+		function compile(){
+			alert("编辑");
+		}
+		function del(obj){
+			$(obj).parents(".messageBox").remove();
+			show();
+		}
+	</script>
+</html>

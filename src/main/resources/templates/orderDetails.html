@@ -1,0 +1,86 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!--页面自适应-->
+		<script type="text/javascript">
+			var iScale = 1;
+			iScale = iScale / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="initial-scale=' + iScale + ",maximum-scale=" + iScale + ",minimum-scale=" + iScale + ',user-scalable=no,width=device-width,height=device-height">');
+			var iWidth = document.documentElement.clientWidth;
+			document.getElementsByTagName('html')[0].style.fontSize = iWidth / 31.5 + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/indentParticulars.css}"/>
+		<title></title>
+	</head>
+	<body>
+		<header class="register">
+			<i class="iconfont" onclick="javascript:history.go(-1);return false;">&#xe697;</i><span class="text">订单详情</span><a href="tel:15609350999"  class="iconfont phoneNum">&#xe6ed;</a>
+		</header>
+		<div class="contentBox">
+			<p class="tilName"><span class="text">订单编号：<em>256987452365974</em></span><span class="orderFormState">待支付</span></p>
+			<div class="messageBox">
+				<p class="message">
+					<a href="订单确认.html" class="store">
+						<span class="imgBox"><img th:src="@{static/images/fd3a8462080c71f60f2581c2e7c1d3f43010.jpeg.webp}"/></span><span class="text">满月楼大酒店</span>
+						<i class="iconfont right">&#xe6a7;</i>
+					</a>
+					
+				</p>
+				<div class="commodityMessage">
+					<p class="box">
+						<span class="commodityName">柠檬椰丝消化饼干</span>
+						<span class="commodityNum">×4</span>
+						<span class="commodityPrice">￥<em>68</em></span>
+					</p>
+					<p class="box">
+						<span class="commodityName">马氏巧克力酥脆米花糖Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptatibus necessitatibus modi tenetur assumenda cumque facere quis possimus adipisci nesciunt. Laborum dolorem et tempore doloribus distinctio nobis quam minus iste?</span>
+						<span class="commodityNum">×4</span>
+						<span class="commodityPrice">￥<em>68</em></span>
+					</p>
+					<p class="aggregateBox">
+						<span class="aggregateNum">总计：￥<em>156</em></span>
+						<span class="moneyNum">实付：<em>￥156</em></span>
+					</p>
+				</div>
+			</div>
+			<p class="tilName">配送信息</p>
+			<div class="messageBox">
+				<p class="address">
+					<span class="text">配送地址</span><span class="phoneNum">丁（先生）<em>13241115232</em></span>
+					<span class="siteTxt">北京市大兴区  某某镇hello小区3单元201</span>
+				</p>
+				<p class="address">
+					<span class="text">配送服务</span><span class="phoneNum">由  商家  提供配送服务</span>
+				</p>
+			</div>
+			<p class="tilName">订单信息</p>
+			<div class="messageBox">
+				<p class="address">
+					<span class="text">订单编号</span><span class="phoneNum">11521003325181235</span>
+				</p>
+				<p class="address">
+					<span class="text">订单时间</span><span class="phoneNum">2017-05-12 14:15:03</span>
+				</p>
+				<p class="address">
+					<span class="text">支付方式</span><span class="phoneNum">微信支付</span>
+				</p>
+			</div>
+		</div>
+		<!--待支付页面按钮-->
+		<!--<p class="awaitPayment"><a href="###" class="btn cancel">取消订单</a><a href="###" class="btn payment">付款</a></p>-->
+		
+		<!--确认收货按钮-->
+		<p class="affirmReceive"><a href="###" class="btn affirm">确认收货</a></p>
+	</body>
+	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('.contentBox .tabBox li').click(function(){
+			$(this).addClass("active").siblings().removeClass("active");
+		});
+	</script>
+</html>

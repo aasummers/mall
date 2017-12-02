@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<script type="text/javascript">
+			var iScale = 1;
+			iScale = iScale / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="initial-scale=' + iScale + ",maximum-scale=" + iScale + ",minimum-scale=" + iScale + ',user-scalable=no,width=device-width,height=device-height">');
+			var iWidth = document.documentElement.clientWidth;
+			document.getElementsByTagName('html')[0].style.fontSize = iWidth / 31.5 + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/peopleCentre.css}"/>
+		<title>新增收货地址</title>
+	</head>
+	<body>
+		<div class="contentBox">
+			<header class="register">
+				<a href="###" class="iconfont">&#xe697;</a><span class="text">新增收货地址</span><span class="manage"></span>
+			</header>
+			<div class="peopleCentre">
+				<p class="userName lineBottom">
+					<em class="name maxWidth">收货人</em>
+					<input type="text" class="addressClass"  placeholder="请输入收货人姓名"/>
+				</p>
+				<p class="userName lineBottom">
+					<em class="name maxWidth">联系电话</em>
+					<input type="text" class="addressClass"  placeholder="请输入收货人联系电话" maxlength="11"/>
+				</p>
+				<p class="userName lineBottom">
+					<em class="name maxWidth">所在地</em>
+					<input type="text" class="addressClass"  placeholder="请输入收货人所在地"/>
+				</p>
+				<p class="userName lineBottom">
+					<em class="name maxWidth">详细地址</em>
+					<input type="text" class="addressClass"  placeholder="请输入详细地址"/>
+				</p>
+				<p class="userName lineBottom">
+					<em class="name maxWidth">设置为默认</em>
+					<span class="default"><i class="clickBtn"></i></span>
+				</p>
+				<span class="saveBtn">保存</span>
+			</div>
+		</div>
+		<script th:src="@{staitc/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".default").click(function(){
+				$(this).toggleClass("active");
+			});
+		</script>
+	</body>
+</html>

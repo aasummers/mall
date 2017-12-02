@@ -40,13 +40,30 @@ public class UserApi {
      * @param userId
      * @return
      */
-    @RequestMapping("/personalCenter")
+    @RequestMapping("/center")
     public String userInfo(Integer userId, ModelMap map){
         user res = userMapper.userInfo(userId);
         map.put("user", res);
-        return "personalCenter";
+        return "center";
     }
 
+    /**
+     * 跳转至修改密码页面
+     * @param userId
+     * @return
+     */
+    @RequestMapping("/toChangePW")
+    public String toChangePW(Integer userId, ModelMap map){
+        map.put("userId", userId);
+        return "changePW";
+    }
+
+    /**
+     * 修改密码
+     * @param userId
+     * @param newPW
+     * @return
+     */
     @RequestMapping("/changePasswd")
     public String changePasswd(Integer userId, String newPW){
         int res = userMapper.changePasswd(userId, newPW);

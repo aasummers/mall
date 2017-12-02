@@ -7,36 +7,50 @@ import com.chengliang.mall.dao.AddressMapper;
 import com.chengliang.mall.dao.UserMapper;
 import com.chengliang.mall.entity.Address;
 import com.chengliang.mall.entity.user;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class AddressApi {
     @Autowired
     private AddressMapper addressMapper;
 
     /**
      * 用户地址列表
+     */
+    @RequestMapping("/myAddress")
+    public String addressList(Integer userId, ModelMap map) {
+//        List<Address> res = addressMapper.addressList(userId);
+        return "myAddress";
+    }
+
+    /**
+     * 跳转到添加收货地址页面
      * @param userId
+     * @param map
      * @return
      */
-    @RequestMapping("/addressList")
-    public String addressList(int userId){
-        List<Address> res = addressMapper.addressList(userId);
-        return JSONArray.toJSONString(res);
-    };
+    @RequestMapping("/toAddAddress")
+    public String toAddAddress(Integer userId, ModelMap map) {
+        map.put("userId", userId);
+        return "addAddress";
+    }
+
+    ;
 
     /**
      * 添加地址
-     * @return
      */
     @RequestMapping("/addAddress")
     @Transactional
-    public String addAddress(String ress){
+    public String addAddress(String ress) {
         Address address = JSON.parseObject(ress, Address.class);
         int res = addressMapper.insert(address);
         updateDefaultAddress(address.getUserId(), defaultAddressId(address));
@@ -45,20 +59,19 @@ public class AddressApi {
 
     /**
      * 更新用户地址
-     * @return
      */
     @RequestMapping("/updateAddress")
     @Transactional
-    public String updateAddress(String ress){
+    public String updateAddress(String ress) {
         Address address = JSON.parseObject(ress, Address.class);
         updateDefaultAddress(address.getUserId(), defaultAddressId(address));
         int res = addressMapper.updateAddress(address);
         return res + "";
     }
 
-    public Integer defaultAddressId(Address address){
+    public Integer defaultAddressId(Address address) {
         Integer res = null;
-        if( address.getIsDefault()==1 ){
+        if (address.getIsDefault() == 1) {
             res = address.getId();
         }
         return res;
@@ -66,15 +79,14 @@ public class AddressApi {
 
     /**
      * 更新用户默认地址
-     * @param userId
      */
-    private void updateDefaultAddress(int userId, Integer addressId){
-        if(addressId==null) return;
+    private void updateDefaultAddress(int userId, Integer addressId) {
+        if (addressId == null) return;
         List<Address> addresses = addressMapper.addressList(userId);
-        for (Address address : addresses){
-            if(addressId == address.getId()){
+        for (Address address : addresses) {
+            if (addressId.equals(address.getId())) {
                 address.setIsDefault(1);
-            }else{
+            } else {
                 address.setIsDefault(0);
             }
             addressMapper.updateAddress(address);

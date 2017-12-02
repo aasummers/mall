@@ -1,0 +1,143 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<script type="text/javascript">
+			var iScale = 1;
+			iScale = iScale / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="initial-scale=' + iScale + ",maximum-scale=" + iScale + ",minimum-scale=" + iScale + ',user-scalable=no,width=device-width,height=device-height">');
+			var iWidth = document.documentElement.clientWidth;
+			document.getElementsByTagName('html')[0].style.fontSize = iWidth / 31.5 + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/peopleCentre.css}"/>
+		<title>我的订单</title>
+	</head>
+	<body>
+		<div class="contentBox">
+			<header class="register">
+				<a href="###" class="iconfont">&#xe697;</a><span class="text">个人中心</span><span class="manage"></span>
+			</header>
+			<!--顶部切换栏-->
+			<div class="orderFormParticulars">
+				<ul class="tabList">
+					<li class="everyState active">全部</li>
+					<li class="everyState">待发货</li>
+					<li class="everyState">待收货</li>
+					<li class="everyState">已完成</li>
+				</ul>
+			</div>
+			<!--订单内容栏-->
+			<div class="orderFormContent">
+				<!--全部状态-->
+				<div class="everyOrderForm">
+					
+					<!--每一条独立的状态开头-->
+					<div class="everyList">
+						<p class="common orderForm">
+							<span class="numBox">
+								订单编号：<em class="number">407</em>
+							</span>
+							<span class="time right">2017-09-26 11:23</span>
+						</p>
+						<p class="common orderForm">
+							<span class="numBox">
+								共<em class="number">1</em>件商品
+							</span>
+							<span class="time right">实付：￥<em class="money">34</em></span>
+						</p>
+						<p class="common status">待发货</p>
+					</div><!--每一条独立的状态结尾-->
+					
+					<!--每一条独立的状态开头-->
+					<div class="everyList">
+						<p class="common orderForm">
+							<span class="numBox">
+								订单编号：<em class="number">407</em>
+							</span>
+							<span class="time right">2017-09-26 11:23</span>
+						</p>
+						<p class="common orderForm">
+							<span class="numBox">
+								共<em class="number">1</em>件商品
+							</span>
+							<span class="time right">实付：￥<em class="money">34</em></span>
+						</p>
+						<p class="common status">待发货</p>
+					</div><!--每一条独立的状态结尾-->
+					
+				</div> <!-- 全部订单结尾-->
+				<!--待发货-->
+				
+				<div class="everyOrderForm none"><!--待发货开始-->
+					<!--每一条独立的状态开头-->
+					<div class="everyList">
+						<p class="common orderForm">
+							<span class="numBox">
+								订单编号：<em class="number">407</em>
+							</span>
+							<span class="time right">2017-09-26 11:23</span>
+						</p>
+						<p class="common orderForm">
+							<span class="numBox">
+								共<em class="number">1</em>件商品
+							</span>
+							<span class="time right">实付：￥<em class="money">34</em></span>
+						</p>
+						<p class="common status">待发货</p>
+					</div><!--每一条独立的状态结尾-->
+				</div><!--待发货结尾-->
+				<!--待收货-->
+				<div class="everyOrderForm none"><!--待收货开始-->
+					<!--每一条独立的状态开头-->
+					<div class="everyList">
+						<p class="common orderForm">
+							<span class="numBox">
+								订单编号：<em class="number">407</em>
+							</span>
+							<span class="time right">2017-09-26 11:23</span>
+						</p>
+						<p class="common orderForm">
+							<span class="numBox">
+								共<em class="number">1</em>件商品
+							</span>
+							<span class="time right">实付：￥<em class="money">34</em></span>
+						</p>
+						<p class="common status">待收货</p>
+					</div><!--每一条独立的状态结尾-->
+						
+				</div><!--待收货结尾-->
+				<!--已完成-->
+				<div class="everyOrderForm none"><!--已完成开始-->
+					<!--每一条独立的状态开头-->
+					<div class="everyList">
+						<p class="common orderForm">
+							<span class="numBox">
+								订单编号：<em class="number">407</em>
+							</span>
+							<span class="time right">2017-09-26 11:23</span>
+						</p>
+						<p class="common orderForm">
+							<span class="numBox">
+								共<em class="number">1</em>件商品
+							</span>
+							<span class="time right">实付：￥<em class="money">34</em></span>
+						</p>
+						<p class="common status">已完成</p>
+					</div><!--每一条独立的状态结尾-->
+				</div><!--已完成结尾-->
+			</div>
+		</div>
+		<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(".tabList .everyState").click(function(){
+				$(this).addClass("active").siblings(".everyState").removeClass("active");
+				var index=$(this).index();
+				$(".orderFormContent .everyOrderForm").eq(index).removeClass("none").siblings(".everyOrderForm").addClass("none");
+			});
+		</script>
+	</body>
+</html>
