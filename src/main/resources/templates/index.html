@@ -52,12 +52,9 @@
 <!--轮播图-->
 <div class="imgcarousel">
     <div class="swiper-container one">
-        <div class="swiper-wrapper">
-            <img th:src="@{static/images/wap/wepbanner.jpg}" class="swiper-slide" onclick="location='https://www.baidu.com'">
-            <img th:src="@{static/images/wap/wepbanner.jpg}" class="swiper-slide"/>
-            <img th:src="@{static/images/wap/wepbanner.jpg}" class="swiper-slide"/>
-            <img th:src="@{static/images/wap/wepbanner.jpg}" class="swiper-slide"/>
-            <img th:src="@{static/images/wap/wepbanner.jpg}" class="swiper-slide"/>
+        <div class="swiper-wrapper" th:each="advert : ${advertList}">
+
+            <img th:src="${advert.image}" class="swiper-slide" onclick="location='${advert.tourl}'">
         </div>
         <!-- 分页器 -->
         <div class="swiper-pagination one"></div>

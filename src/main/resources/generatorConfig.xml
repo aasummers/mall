@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!--指定特定数据库的jdbc驱动jar包的位置 -->
-    <classPathEntry location="/media/dingyuxin/娱乐/install/.m2/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar"/>
+    <classPathEntry location="/home/dingyuxin/.m2/repository/mysql/mysql-connector-java/6.0.6/mysql-connector-java-6.0.6.jar"/>
     <context id="test" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
@@ -43,7 +43,7 @@
         </javaClientGenerator>
 
         <!-- 要生成哪些表 -->
-        <table tableName="order_goods" domainObjectName="OrderGoods"
+        <table tableName="advert" domainObjectName="Advert"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="true"></table>
