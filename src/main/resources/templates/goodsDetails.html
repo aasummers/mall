@@ -23,14 +23,14 @@
 			<div class="navhurdle">
 				<ul class="indent">
 					<li class="orderForm">
-						<a href="###" class="imgbox">
+						<a th:href="@{center}" class="imgbox">
 							<!--需要切图添加-->
 							<img th:src="@{static/images/wap/waphomepagenav01.png}"/>
 							<span>个人中心</span>
 						</a>
 					</li>
 					<li class="orderForm">
-						<a href="###" class="imgbox">
+						<a th:href="@{myAddress}" class="imgbox">
 							<!--需要切图添加-->
 							<img th:src="${res.image}"/>
 							<span>我的订单</span>
@@ -85,7 +85,7 @@
 			$('.wapnavmodel').fadeToggle(500);
 			$('body,html').toggleClass('heights');
 		});
-		var num=0;
+		var num=1;
 		function subtract(){
 			if(num>0){
 				num--;

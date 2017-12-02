@@ -72,7 +72,7 @@ public class Address implements Serializable {
     }
 
     public Integer getIsDefault() {
-        return isDefault;
+        return isDefault==null ? 0 : isDefault;
     }
 
     public void setIsDefault(Integer isDefault) {

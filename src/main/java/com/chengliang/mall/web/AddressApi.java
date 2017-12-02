@@ -27,7 +27,8 @@ public class AddressApi {
      */
     @RequestMapping("/myAddress")
     public String addressList(Integer userId, ModelMap map) {
-//        List<Address> res = addressMapper.addressList(userId);
+        List<Address> addressList = addressMapper.addressList(userId);
+        map.put("addressList", addressList);
         return "myAddress";
     }
 
@@ -43,18 +44,44 @@ public class AddressApi {
         return "addAddress";
     }
 
-    ;
+    /**
+     * 跳转到修改收货地址页面
+     * @param addressId
+     * @return
+     */
+    @RequestMapping("/delAddress")
+    public String delAddress(Integer addressId) {
+        Address address = addressMapper.queryAddressById(addressId);
+        if(address==null){
+            // 地址不存在的处理方式
+        }
+        addressMapper.delAddress(addressId);
+        return "redirect:myAddress?userId="+address.getUserId();
+    }
+
+    /**
+     * 跳转到修改收货地址页面
+     * @param addressId
+     * @param map
+     * @return
+     */
+    @RequestMapping("/toEditAddress")
+    public String toEditAddress(Integer addressId, ModelMap map) {
+        Address address = addressMapper.queryAddressById(addressId);
+        map.put("address", address);
+        return "editAddress";
+    }
+
 
     /**
      * 添加地址
      */
     @RequestMapping("/addAddress")
     @Transactional
-    public String addAddress(String ress) {
-        Address address = JSON.parseObject(ress, Address.class);
+    public String addAddress(Address address) {
         int res = addressMapper.insert(address);
         updateDefaultAddress(address.getUserId(), defaultAddressId(address));
-        return res + "";
+        return "redirect:myAddress?userId="+address.getUserId();
     }
 
     /**
@@ -62,11 +89,10 @@ public class AddressApi {
      */
     @RequestMapping("/updateAddress")
     @Transactional
-    public String updateAddress(String ress) {
-        Address address = JSON.parseObject(ress, Address.class);
+    public String updateAddress(Address address) {
         updateDefaultAddress(address.getUserId(), defaultAddressId(address));
         int res = addressMapper.updateAddress(address);
-        return res + "";
+        return "redirect:myAddress?userId="+address.getUserId();
     }
 
     public Integer defaultAddressId(Address address) {

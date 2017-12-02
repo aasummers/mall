@@ -22,28 +22,29 @@
 				<a href="###" class="iconfont">&#xe697;</a><span class="text">新增收货地址</span><span class="manage"></span>
 			</header>
 			<div class="peopleCentre">
-				<form id="addressForm" th:action="@{addAddress}" th:method="post">
+				<form id="addressForm" th:action="@{updateAddress}" th:method="post">
 				<p class="userName lineBottom">
 					<em class="name maxWidth">收货人</em>
-					<input type="text" class="addressClass" name="recUserName" placeholder="请输入收货人姓名"/>
+					<input type="text" class="addressClass" name="recUserName" placeholder="请输入收货人姓名" th:value="${address.recUserName}"/>
 				</p>
 				<p class="userName lineBottom">
 					<em class="name maxWidth">联系电话</em>
-					<input type="text" class="addressClass" name="recUserPhone"  placeholder="请输入收货人联系电话" maxlength="11"/>
+					<input type="text" class="addressClass" name="recUserPhone"  placeholder="请输入收货人联系电话" maxlength="11" th:value="${address.recUserPhone}"/>
 				</p>
 				<p class="userName lineBottom">
 					<em class="name maxWidth">所在地</em>
-					<input type="text" class="addressClass" name="recUserArea" placeholder="请输入收货人所在地"/>
+					<input type="text" class="addressClass" name="recUserArea" placeholder="请输入收货人所在地" th:value="${address.recUserArea}"/>
 				</p>
 				<p class="userName lineBottom">
 					<em class="name maxWidth">详细地址</em>
-					<input type="text" class="addressClass" name="recUserAddress"  placeholder="请输入详细地址"/>
+					<input type="text" class="addressClass" name="recUserAddress"  placeholder="请输入详细地址" th:value="${address.recUserAddress}"/>
 				</p>
 				<p class="userName lineBottom">
 					<em class="name maxWidth">设置为默认</em>
 					<span class="default"><i class="clickBtn"></i></span>
 				</p>
-					<input type="text" name="userId" th:value="${userId}"/>
+					<input type="text" name="userId" th:value="${address.userId}"/>
+					<input type="text" name="id" th:value="${address.id}"/>
 				<span class="saveBtn">保存</span>
 			</div>
 			</form>

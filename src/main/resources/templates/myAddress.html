@@ -21,8 +21,26 @@
 		<header class="register">
 			<i class="iconfont">&#xe697;</i><span class="text">我的收货地址</span><span class="manage">管理</span>
 		</header>
-		<div class="contentBox">
+		<div class="contentBox" th:each="address : ${addressList}">
 			<div class="messageBox">
+				<div class="addressMsg">
+					<i class="iconfont">&#xe600;</i>
+					<p class="message ">
+						<span class="text"><em th:text="${address.recUserName}"></em></span><span class="text" th:text="${address.recUserPhone}"></span>
+					</p>
+					<p class="message ">
+						<span class="text" th:text="${address.recUserAddress}"></span>
+					</p>
+				</div>
+				<div class="projectDanage">
+					<span class="radio"><i class="radioIcon" ></i>默认地址</span>
+					<div class="rightCompileBox">
+						<span class="compile"th:onclick="'compile('+${address.id}+')'">编辑</span>
+						<span class="delete" th:onclick="'del('+${address.id}+')'">删除</span>
+					</div>
+				</div>
+			</div>
+			<!--<div class="messageBox">
 				<div class="addressMsg">
 					<i class="iconfont">&#xe600;</i>
 					<p class="message ">
@@ -39,8 +57,8 @@
 						<span class="delete" onclick="del(this)">删除</span>
 					</div>
 				</div>
-			</div>
-			<div class="messageBox">
+			</div>-->
+			<!--<div class="messageBox">
 				<div class="addressMsg">
 					<i class="iconfont">&#xe600;</i>
 					<p class="message ">
@@ -57,16 +75,16 @@
 						<span class="delete" onclick="del(this)">删除</span>
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<div class="newAddress">
-				<a href="###" class="address"><i class="iconfont">&#xe711;</i><span class="text">添加收货地址</span></a>
+				<a th:href="@{toAddAddress}" class="address"><i class="iconfont">&#xe711;</i><span class="text">添加收货地址</span></a>
 			</div>
 		</div>
 		<p class="noOrders"> 暂无收货地址 </p>
 	</body>
 	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){ 
+	<script type="text/javascript" th:inline="javascript">
+		$(document).ready(function(){
 			show();
 		});
 		//暂无收货地址显示及隐藏
@@ -85,12 +103,11 @@
 			$(this).parents(".messageBox").siblings().find(".radioIcon").removeClass("active");
 			$(this).find(".radioIcon").addClass("active");
 		});
-		function compile(){
-			alert("编辑");
+		function compile(addressId){
+            location.href = "toEditAddress?addressId="+addressId+"";
 		}
-		function del(obj){
-			$(obj).parents(".messageBox").remove();
-			show();
+		function del(addressId){
+            location.href = "delAddress?addressId="+addressId+"";
 		}
 	</script>
 </html>
