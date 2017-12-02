@@ -15,6 +15,12 @@ public class CommonInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
         request.setAttribute("base", request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath());;
+        // 指定允许其他域名访问
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        // 响应类型
+        response.setHeader("Access-Control-Allow-Methods", "POST");
+        // 响应头设置
+        response.setHeader("Access-Control-Allow-Headers","x-requested-with,content-type");
         return true;
     }
 

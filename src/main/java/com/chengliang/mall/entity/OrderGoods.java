@@ -11,9 +11,11 @@ public class OrderGoods implements Serializable {
 
     private String goodsimg;
 
-    private String goodsprice;
+    private Double goodsprice;
 
-    private String goodspromotionprice;
+    private Double goodspromotionprice;
+
+    private Integer goodsId;
 
     private static final long serialVersionUID = 1L;
 
@@ -49,20 +51,28 @@ public class OrderGoods implements Serializable {
         this.goodsimg = goodsimg == null ? null : goodsimg.trim();
     }
 
-    public String getGoodsprice() {
+    public Double getGoodsprice() {
         return goodsprice;
     }
 
-    public void setGoodsprice(String goodsprice) {
-        this.goodsprice = goodsprice == null ? null : goodsprice.trim();
+    public void setGoodsprice(Double goodsprice) {
+        this.goodsprice = goodsprice;
     }
 
-    public String getGoodspromotionprice() {
+    public Double getGoodspromotionprice() {
         return goodspromotionprice;
     }
 
-    public void setGoodspromotionprice(String goodspromotionprice) {
-        this.goodspromotionprice = goodspromotionprice == null ? null : goodspromotionprice.trim();
+    public void setGoodspromotionprice(Double goodspromotionprice) {
+        this.goodspromotionprice = goodspromotionprice;
+    }
+
+    public Integer getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(Integer goodsId) {
+        this.goodsId = goodsId;
     }
 
     @Override
