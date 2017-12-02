@@ -26,6 +26,8 @@ public class Order implements Serializable {
     private String recUserPhone;
     @Column(name = "recUserAddress")
     private String recUserAddress;
+    @Column(name = "goodsNum")
+    private Integer goodsNum;
 
     private List<OrderGoods> orderGoodsList;
 
@@ -101,5 +103,13 @@ public class Order implements Serializable {
 
     public void setOrderGoodsList(List<OrderGoods> orderGoodsList) {
         this.orderGoodsList = orderGoodsList;
+    }
+
+    public Integer getGoodsNum() {
+        return goodsNum;
+    }
+
+    public void setGoodsNum(Integer goodsNum) {
+        this.goodsNum = goodsNum;
     }
 }

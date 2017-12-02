@@ -14,11 +14,12 @@
   <insert id="insert" parameterType="com.chengliang.mall.entity.Order">
     insert into `order` ( orderCode,
       state, userId,
-      recUserName, recUserPhone, recUserAddress
+      recUserName, recUserPhone, recUserAddress, goodsNum
       )
     values (#{orderCode,jdbcType=VARCHAR},
       #{state,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER},
-      #{recUserName,jdbcType=VARCHAR}, #{recUserPhone,jdbcType=VARCHAR}, #{recUserAddress,jdbcType=VARCHAR}
+      #{recUserName,jdbcType=VARCHAR}, #{recUserPhone,jdbcType=VARCHAR}, #{recUserAddress,jdbcType=VARCHAR},
+      #{goodsNum}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.chengliang.mall.entity.Order">
@@ -45,6 +46,9 @@
       <if test="recUserAddress != null">
         recUserAddress,
       </if>
+      <if test="goodsNum != null">
+        goodsNum,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderCode != null">
@@ -67,6 +71,9 @@
       </if>
       <if test="recUserAddress != null">
         #{recUserAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="goodsNum != null">
+        #{goodsNum,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
