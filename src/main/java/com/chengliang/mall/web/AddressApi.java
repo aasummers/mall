@@ -29,6 +29,7 @@ public class AddressApi {
     public String addressList(Integer userId, ModelMap map) {
         List<Address> addressList = addressMapper.addressList(userId);
         map.put("addressList", addressList);
+        map.put("userId", userId);
         return "myAddress";
     }
 
