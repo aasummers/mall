@@ -82,22 +82,29 @@
     <h3 class="lineStyle">
         <em class="text">建材商城</em>
     </h3>
-    <div class="shoppingBox">
-        <a href="###" class="imgbox">
-            <img th:src="@{static/images/wepindividuality01.jpg}"/>
+    <div class="shoppingBox" th:each="goods : ${goodsList}">
+        <a th:href="@{goodsDetails(goodsId=${goods.id})}" class="imgbox">
+            <img th:src="${goods.image}"/>
             <div class="describeBox">
-                <p class="describe">西门子开关插座面板—开五孔插座 86型插座5UB01081CC1</p>
-                <h4 class="price"><em class="currentPrice">￥19.9</em> <em class="originalCos">￥49.9</em>t</h4>
+                <p class="describe" th:text="${goods.name}"></p>
+                <h4 class="price"><em class="currentPrice"th:text="${goods.promotionPrice}">￥</em> <em class="originalCos" th:text="${goods.price}">￥</em>t</h4>
             </div>
         </a>
+        <!--<a href="###" class="imgbox">-->
+            <!--<img th:src="@{static/images/wepindividuality01.jpg}"/>-->
+            <!--<div class="describeBox">-->
+                <!--<p class="describe">西门子开关插座面板—开五孔插座 86型插座5UB01081CC1</p>-->
+                <!--<h4 class="price"><em class="currentPrice">￥19.9</em> <em class="originalCos">￥49.9</em>t</h4>-->
+            <!--</div>-->
+        <!--</a>-->
 
-        <a href="###" class="imgbox">
-            <img th:src="@{static/images/wepindividuality02.jpg}"/>
-            <div class="describeBox">
-                <p class="describe">西门子开关插座面板—开五孔插座 86型插座5UB01081CC1</p>
-                <h4 class="price"><em class="currentPrice">￥19.9</em> <em class="originalCos">￥49.9</em>t</h4>
-            </div>
-        </a>
+        <!--<a href="###" class="imgbox">-->
+            <!--<img th:src="@{static/images/wepindividuality02.jpg}"/>-->
+            <!--<div class="describeBox">-->
+                <!--<p class="describe">西门子开关插座面板—开五孔插座 86型插座5UB01081CC1</p>-->
+                <!--<h4 class="price"><em class="currentPrice">￥19.9</em> <em class="originalCos">￥49.9</em>t</h4>-->
+            <!--</div>-->
+        <!--</a>-->
 
     </div>
 </div>

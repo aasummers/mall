@@ -33,7 +33,7 @@ public class GoodsApi {
      * @param goodsId
      * @return
      */
-    @RequestMapping(value = "/goodsDetails", method = RequestMethod.GET)
+    @RequestMapping(value = "/goodsDetails")
     public String goodsDetails(Integer goodsId, ModelMap map){
         Goods res = goodsMapper.queryGoodsDetails(goodsId);
         map.put("res", res);

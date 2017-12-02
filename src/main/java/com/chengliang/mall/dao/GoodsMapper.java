@@ -15,6 +15,9 @@ public interface GoodsMapper {
     @Select("select * from goods")
     List<Goods> queryGoodsList();
 
+    @Select("select * from goods where isindex = 1 limit 2")
+    List<Goods> queryIndexGoods();
+
     @Select("select * from goods where id = #{goodsId}")
     Goods queryGoodsDetails(Integer goodsId);
 }

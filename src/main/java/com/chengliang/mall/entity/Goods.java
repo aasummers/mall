@@ -22,6 +22,8 @@ public class Goods implements Serializable {
     private String descripe;
     @Column(name = "goodsNo")
     private String goodsNo;
+    @Column(name = "isindex")
+    private Integer isindex;
 
     private static final long serialVersionUID = 1L;
 
@@ -87,6 +89,14 @@ public class Goods implements Serializable {
 
     public void setGoodsNo(String goodsNo) {
         this.goodsNo = goodsNo;
+    }
+
+    public Integer getIsindex() {
+        return isindex;
+    }
+
+    public void setIsindex(Integer isindex) {
+        this.isindex = isindex;
     }
 
     @Override
