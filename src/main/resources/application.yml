@@ -38,7 +38,7 @@ spring:
 # 数据源
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/mall?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&serverTimezone=Hongkong
+    url: jdbc:mysql://111.231.207.157:3306/mall?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&serverTimezone=Hongkong
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
