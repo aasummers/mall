@@ -23,8 +23,9 @@ public class OrderApi {
     private OrderMapper orderMapper;
 
     @RequestMapping("/myOrder")
-    public String addressList(Integer userId, ModelMap map) {
-        List<Order> order = orderMapper.selectOrderListByUserId(userId);
+    public String addressList(Integer userId, ModelMap map, Integer orderStatus) {
+        orderStatus = orderStatus == null ? 0 : orderStatus;
+        List<Order> order = orderMapper.selectOrderListByUserId(userId, orderStatus);
         map.put("orderList", order);
         return "myOrder";
     }

@@ -13,6 +13,6 @@ public interface OrderMapper {
 
     int insertSelective(Order record);
 
-    @Select("select * from `order` where userId = #{userId}")
-    List<Order> selectOrderListByUserId(Integer userId);
+    @Select("select * from `order` where userId = #{userId} and orderStatus = #{status}")
+    List<Order> selectOrderListByUserId(Integer userId, Integer status);
 }
