@@ -13,6 +13,9 @@ body {
   margin-bottom: 0.84000084rem;
 }
 .imgcarousel {
+  height: 23.52002352rem;
+}
+.imgcarousel {
   clear: both;
 }
 .imgcarousel .swiper-container .swiper-wrapper img {
@@ -313,7 +316,7 @@ header.bgwhite {
 }
 .describeBox {
   position: absolute;
-  width: 100%%;
+  width: 100%;
   left: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);

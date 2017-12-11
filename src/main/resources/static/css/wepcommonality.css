@@ -121,12 +121,12 @@ header .search {
 header .search .searchInput {
   width: 22.89002289rem;
   height: 1.26000126rem;
-  padding: 0.42000042rem;
+  line-height: 1.26000126rem;
   font-size: 1.00800101rem;
   color: #333;
   padding-left: 2.52000252rem;
   background: url(../images/wap/newtimeanddel.png) no-repeat;
-  background-position: 0.7980008rem 0.5040005rem;
+  background-position: 0.7980008rem 0rem;
   background-size: 1.13400113rem 4.87200487rem;
   background-color: #f4f4f4;
   border-radius: 0.25200025rem;
@@ -348,7 +348,7 @@ header.bggreen .left select {
   width: 100%;
   height: 6.72000672rem;
   position: relative;
-  background: url(http://localhost:8080/mall/static/images/wap/wepbottomopen.png) center center no-repeat;
+  background: url(../images/wap/wepbottomopen.png) center center no-repeat;
   background-size: 100% 100%;
   position: fixed;
   left: 0;
@@ -512,7 +512,7 @@ footer.childfooter .content.rests .left li {
 .orderSuccess {
   width: 15.41401541rem;
   height: 8.61000861rem;
-  background: url(http://localhost:8080/mall/images/wap/ordersuccess.png) no-repeat center center;
+  background: url(../images/wap/ordersuccess.png) no-repeat center center;
   background-size: 100% 100%;
   border-radius: 0.33600034rem;
   position: fixed;

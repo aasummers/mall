@@ -52,9 +52,8 @@
 <!--轮播图-->
 <div class="imgcarousel">
     <div class="swiper-container one">
-        <div class="swiper-wrapper" th:each="advert : ${advertList}">
-
-            <img th:src="${advert.image}" class="swiper-slide">
+        <div class="swiper-wrapper">
+            <img th:each="advert : ${advertList}" th:src="${advert.image}" class="swiper-slide">
         </div>
         <!-- 分页器 -->
         <div class="swiper-pagination one"></div>
