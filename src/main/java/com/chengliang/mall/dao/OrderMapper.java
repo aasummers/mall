@@ -15,4 +15,7 @@ public interface OrderMapper {
 
     @Select("select * from `order` where userId = #{userId} and orderStatus = #{status}")
     List<Order> selectOrderListByUserId(Integer userId, Integer status);
+
+    @Select("select * from `order` where orderCode = #{orderCode};")
+    Order selectOrderByOrderCode(String orderCode);
 }

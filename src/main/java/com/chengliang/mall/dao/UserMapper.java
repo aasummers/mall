@@ -13,8 +13,8 @@ public interface UserMapper {
      * @param user
      * @return
      */
-    @Select("select count(*) from user where name = #{name} and password = #{password}")
-    int userExist(user user);
+    @Select("select * from user where name = #{name} and password = #{password}")
+    user userExist(user user);
 
     @Select("select * from user where id = #{userId}")
     user userInfo(Integer userId);

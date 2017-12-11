@@ -77,6 +77,11 @@
 	</body>
 	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+        $('.contentBox .mode li').click(function(){
+            var index=$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $('.contentMessage .everyBox').eq(index).show().siblings().hide();
+        });
 		$('.contentBox .mode li').click(function(){
 			var index=$(this).index();
 			$(this).addClass("active").siblings().removeClass("active");
@@ -116,15 +121,25 @@
 			}
 		});
 		$(".btnBox button").click(function(){
-			if(!(/^\d{6}$/.test($(".authCode").val()))){
-				clearTimeout();
-			    $("body").append('<p class="reminder tanchu">验证码错误</p>');
-				 setTimeout(function(){
-				 	$('.reminder').remove() 
-				 }, 3000);
-			}else{
-				alert("填写正确");
-			}
+            var phone = $(".phone").val();
+            console.log(phone);
+            $.ajax({
+                //提交数据的类型 POST GET
+                type:"POST",
+                //提交的网址
+                url:"/mall/login",
+                //提交的数据
+                data:{userName:phone,
+                      passWord:"123456"},
+
+                //成功返回之后调用的函数
+                success:function(data){
+                    console.log("登录返回值"+data);
+                    if(data){
+                        location.href = "center?userId=1";
+					}
+                }
+            });
 		})
 		
 		 var time =59;

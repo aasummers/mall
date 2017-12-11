@@ -1,8 +1,7 @@
 package com.chengliang.mall.entity;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
 import javax.persistence.*;
+import java.io.Serializable;
 @Table(name = "address")
 public class Goods implements Serializable {
     @Id
@@ -15,9 +14,9 @@ public class Goods implements Serializable {
     @Column(name = "num")
     private Integer num;
     @Column(name = "price")
-    private BigDecimal price;
+    private Double price;
     @Column(name = "promotionPrice")
-    private BigDecimal promotionPrice;
+    private Double promotionPrice;
     @Column(name = "descripe")
     private String descripe;
     @Column(name = "goodsNo")
@@ -59,19 +58,19 @@ public class Goods implements Serializable {
         this.num = num;
     }
 
-    public BigDecimal getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public BigDecimal getPromotionPrice() {
+    public Double getPromotionPrice() {
         return promotionPrice;
     }
 
-    public void setPromotionPrice(BigDecimal promotionPrice) {
+    public void setPromotionPrice(Double promotionPrice) {
         this.promotionPrice = promotionPrice;
     }
 

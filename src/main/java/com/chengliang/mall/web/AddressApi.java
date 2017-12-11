@@ -15,6 +15,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -26,7 +27,8 @@ public class AddressApi {
      * 用户地址列表
      */
     @RequestMapping("/myAddress")
-    public String addressList(Integer userId, ModelMap map) {
+    public String addressList(HttpServletRequest request, Integer userId, ModelMap map) {
+        userId = ((user)request.getSession().getAttribute("user")).getId();
         List<Address> addressList = addressMapper.addressList(userId);
         map.put("addressList", addressList);
         map.put("userId", userId);

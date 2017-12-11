@@ -22,7 +22,7 @@
       #{goodsNum}, #{orderStatus}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.chengliang.mall.entity.Order">
+  <insert id="insertSelective" parameterType="com.chengliang.mall.entity.Order" useGeneratedKeys="true" keyProperty="id">
     insert into `order`
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="orderCode != null">
@@ -79,7 +79,7 @@
         #{goodsNum,jdbcType=VARCHAR},
       </if>
       <if test="orderStatus != null">
-        #{orderStatus},
+        #{orderStatus}
       </if>
     </trim>
   </insert>

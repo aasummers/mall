@@ -22,7 +22,7 @@
 			<i class="iconfont" onclick="javascript:history.go(-1);return false;">&#xe697;</i><span class="text">订单详情</span><a href="tel:15609350999"  class="iconfont phoneNum">&#xe6ed;</a>
 		</header>
 		<div class="contentBox">
-			<p class="tilName"><span class="text">订单编号：<em>256987452365974</em></span><span class="orderFormState">待支付</span></p>
+			<p class="tilName"><span class="text">订单编号：<em th:text="${order.orderCode}"></em></span><span class="orderFormState">待支付</span></p>
 			<div class="messageBox">
 				<p class="message">
 					<a href="订单确认.html" class="store">
@@ -31,17 +31,18 @@
 					</a>
 					
 				</p>
-				<div class="commodityMessage">
+				<div class="commodityMessage" th:each="orderGoods : ${order.orderGoodsList}">
+
 					<p class="box">
-						<span class="commodityName">柠檬椰丝消化饼干</span>
+						<span class="commodityName" th:text="${orderGoods.goodsname}"></span>
 						<span class="commodityNum">×4</span>
-						<span class="commodityPrice">￥<em>68</em></span>
+						<span class="commodityPrice">￥<em th:text="${orderGoods.goodspromotionprice}">68</em></span>
 					</p>
-					<p class="box">
+					<!--<p class="box">
 						<span class="commodityName">马氏巧克力酥脆米花糖Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptatibus necessitatibus modi tenetur assumenda cumque facere quis possimus adipisci nesciunt. Laborum dolorem et tempore doloribus distinctio nobis quam minus iste?</span>
 						<span class="commodityNum">×4</span>
 						<span class="commodityPrice">￥<em>68</em></span>
-					</p>
+					</p>-->
 					<p class="aggregateBox">
 						<span class="aggregateNum">总计：￥<em>156</em></span>
 						<span class="moneyNum">实付：<em>￥156</em></span>
@@ -75,7 +76,7 @@
 		<!--<p class="awaitPayment"><a href="###" class="btn cancel">取消订单</a><a href="###" class="btn payment">付款</a></p>-->
 		
 		<!--确认收货按钮-->
-		<p class="affirmReceive"><a href="###" class="btn affirm">确认收货</a></p>
+		<p class="affirmReceive"><a href="###" class="btn affirm">确认订单</a></p>
 	</body>
 	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">

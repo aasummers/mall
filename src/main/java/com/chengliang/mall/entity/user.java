@@ -2,7 +2,7 @@ package com.chengliang.mall.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
-@Table(name = "order")
+@Table(name = "user")
 public class user implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

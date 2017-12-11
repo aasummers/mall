@@ -7,7 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class UserApi {
@@ -27,11 +30,15 @@ public class UserApi {
      * @return
      */
     @RequestMapping("/login")
-    public String login(String userName, String passWord){
+    @ResponseBody()
+    public String login(HttpServletRequest request, String userName, String passWord){
         user user = new user();
         user.setName(userName);
         user.setPassword(passWord);
-        int res = userMapper.userExist(user);
+        user res = userMapper.userExist(user);
+        if(res!=null){
+            request.getSession().setAttribute("user", res);
+        }
         return res+"";
     };
 
@@ -60,12 +67,13 @@ public class UserApi {
 
     /**
      * 修改密码
-     * @param userId
      * @param newPW
      * @return
      */
     @RequestMapping("/changePasswd")
-    public String changePasswd(Integer userId, String newPW){
+    @ResponseBody()
+    public String changePasswd(HttpServletRequest request, String newPW){
+        Integer userId = ((user)request.getSession().getAttribute("user")).getId();
         int res = userMapper.changePasswd(userId, newPW);
         return JSONObject.toJSONString(res);
     }

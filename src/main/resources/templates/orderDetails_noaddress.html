@@ -1,0 +1,71 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta content="yes" name="apple-mobile-web-app-capable" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="email=no" name="format-detection" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<script type="text/javascript">
+			var iScale = 1;
+			iScale = iScale / window.devicePixelRatio;
+			document.write('<meta name="viewport" content="initial-scale=' + iScale + ",maximum-scale=" + iScale + ",minimum-scale=" + iScale + ',user-scalable=no,width=device-width,height=device-height">');
+			var iWidth = document.documentElement.clientWidth;
+			document.getElementsByTagName('html')[0].style.fontSize = iWidth / 31.5 + 'px';
+		</script>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/ddxq.css}"/>
+		<title>订单详情</title>
+	</head>
+	<body>
+		<header class="register">
+			<i class="iconfont" onclick="javascript:history.go(-1);return false;">&#xe697;</i><span class="text">订单详情</span><a href="tel:15609350999"  class="iconfont phoneNum">&#xe6ed;</a>
+		</header>
+		<div class="contentBox">
+			<!--无收货地址-->
+			<div class="address">
+				<a th:href="@{myAddress}" class="lines">
+					<!--<div class="placeAdd">-->
+						<i class="iconfont left">&#xeb87;</i>
+						<span class="placeAddress">请输入收货地址</span>
+					<!--</div>-->
+						<i class="iconfont right">&#xe6a7;</i>
+					<!--有收获地址-->
+				</a>
+			</div>
+			<!--<div class="addressMsg">
+				<i class="iconfont">&#xe600;</i>
+				<p class="message ">
+					<span class="text">收货人：<em>丁先生</em></span><span class="text right">18001393832</span>
+				</p>
+				<p class="message ">
+					<span class="text">北京市 亦庄 经海五路科创十一街数字工场6号楼7层</span>
+				</p>
+			</div>-->
+			<!--订单编号栏-->
+			<div class="orderBox">
+				<span class="orderNumber">订单编号：<em class="number">23753321</em></span>
+				<span class="orderState">待收货</span>
+			</div>
+			<!--订单详细内容-->
+			<div class="orderContent">
+				<div class="leftImgBox">
+					<img th:src="@{static/images/wap/3dexperience01.jpg}"/>
+				</div>
+				<!--产品信息-->
+				<div class="rightTextBox">
+					<p class="textContext">西门子开关插座面板—开五孔插座 86型插座5UB01081CC1</p>
+					<p class="priceNum"><em class="currentPrice">￥49.8</em><em class="originalPrice">￥119.00</em></p>
+				</div>
+			</div>
+			<!--下单时间-->
+			<p class="orderTime">下单时间<em class="time">2017-09-26 16:07</em></p>
+			<!--底部订单确认栏-->
+			<!--使用固定定位;目的:撑开页面防止最下面的内容被底部确认栏覆盖-->
+			<div class="strut"></div>
+			<div class="affirm">
+				<p class="commodityNum">共计<em class="numbers">1</em>件商品  总计：￥<em class="money">119.00</em></p>
+				<p class="buttonConfirm"><span class="button">确认收货</span></p>
+			</div>
+		</div>
+	</body>
+</html>
