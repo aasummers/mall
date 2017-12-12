@@ -33,7 +33,7 @@ public class OrderApi {
     public String addressList(HttpServletRequest request, ModelMap map, Integer orderStatus) {
         user user = (user) request.getSession().getAttribute("user");
         List<Order> order;
-        if(orderStatus==null){
+        if(orderStatus==null || orderStatus==0){
             order = orderMapper.selectAllOrderListByUserId(user.getId());
         }else{
             order = orderMapper.selectOrderListByUserId(user.getId(), orderStatus);

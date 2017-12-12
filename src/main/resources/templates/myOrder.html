@@ -24,10 +24,10 @@
 			<!--顶部切换栏-->
 			<div class="orderFormParticulars">
 				<ul class="tabList">
-					<li class="everyState active">全部</li>
-					<li class="everyState">待发货</li>
-					<li class="everyState">待收货</li>
-					<li class="everyState">已完成</li>
+					<li class="everyState active" onclick="orderList(0)">全部</li>
+					<li class="everyState" onclick="orderList(1)">待发货</li>
+					<li class="everyState" onclick="orderList(3)">待收货</li>
+					<li class="everyState" onclick="orderList(4)">已完成</li>
 				</ul>
 			</div>
 			<!--订单内容栏-->
@@ -51,93 +51,22 @@
 						</p>
 						<p class="common status">待发货</p>
 					</div><!--每一条独立的状态结尾-->
-					
-					<!--每一条独立的状态开头-->
-					<div class="everyList">
-						<p class="common orderForm">
-							<span class="numBox">
-								订单编号：<em class="number">401</em>
-							</span>
-							<span class="time right">2017-09-26 11:23</span>
-						</p>
-						<p class="common orderForm">
-							<span class="numBox">
-								共<em class="number">1</em>件商品
-							</span>
-							<span class="time right">实付：￥<em class="money">34</em></span>
-						</p>
-						<p class="common status">待发货</p>
-					</div><!--每一条独立的状态结尾-->
-					
+
 				</div> <!-- 全部订单结尾-->
-				<!--待发货-->
-				
-				<div class="everyOrderForm none"><!--待发货开始-->
-					<!--每一条独立的状态开头-->
-					<div class="everyList">
-						<p class="common orderForm">
-							<span class="numBox">
-								订单编号：<em class="number">402</em>
-							</span>
-							<span class="time right">2017-09-26 11:23</span>
-						</p>
-						<p class="common orderForm">
-							<span class="numBox">
-								共<em class="number">1</em>件商品
-							</span>
-							<span class="time right">实付：￥<em class="money">34</em></span>
-						</p>
-						<p class="common status">待发货</p>
-					</div><!--每一条独立的状态结尾-->
-				</div><!--待发货结尾-->
-				<!--待收货-->
-				<div class="everyOrderForm none"><!--待收货开始-->
-					<!--每一条独立的状态开头-->
-					<div class="everyList">
-						<p class="common orderForm">
-							<span class="numBox">
-								订单编号：<em class="number">403</em>
-							</span>
-							<span class="time right">2017-09-26 11:23</span>
-						</p>
-						<p class="common orderForm">
-							<span class="numBox">
-								共<em class="number">1</em>件商品
-							</span>
-							<span class="time right">实付：￥<em class="money">34</em></span>
-						</p>
-						<p class="common status">待收货</p>
-					</div><!--每一条独立的状态结尾-->
-						
-				</div><!--待收货结尾-->
-				<!--已完成-->
-				<div class="everyOrderForm none"><!--已完成开始-->
-					<!--每一条独立的状态开头-->
-					<div class="everyList">
-						<p class="common orderForm">
-							<span class="numBox">
-								订单编号：<em class="number">404</em>
-							</span>
-							<span class="time right">2017-09-26 11:23</span>
-						</p>
-						<p class="common orderForm">
-							<span class="numBox">
-								共<em class="number">1</em>件商品
-							</span>
-							<span class="time right">实付：￥<em class="money">34</em></span>
-						</p>
-						<p class="common status">已完成</p>
-					</div><!--每一条独立的状态结尾-->
-				</div><!--已完成结尾-->
+
 			</div>
 		</div>
 		<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(".tabList .everyState").click(function(){
 				$(this).addClass("active").siblings(".everyState").removeClass("active");
-				var index=$(this).index();
-				$(".orderFormContent .everyOrderForm").eq(index).removeClass("none").siblings(".everyOrderForm").addClass("none");
+				/*var index=$(this).index();
+				$(".orderFormContent .everyOrderForm").eq(index).removeClass("none").siblings(".everyOrderForm").addClass("none");*/
 			});
+
+			function orderList(status){
+				location.href = "myOrder?orderStatus="+status;
+			}
 		</script>
 	</body>
 </html>
