@@ -30,9 +30,10 @@ public class OrderApi {
     private OrderMapper orderMapper;
 
     @RequestMapping("/myOrder")
-    public String addressList(Integer userId, ModelMap map, Integer orderStatus) {
+    public String addressList(HttpServletRequest request, ModelMap map, Integer orderStatus) {
+        user user = (user) request.getSession().getAttribute("user");
         orderStatus = orderStatus == null ? 0 : orderStatus;
-        List<Order> order = orderMapper.selectOrderListByUserId(userId, orderStatus);
+        List<Order> order = orderMapper.selectOrderListByUserId(user.getId(), orderStatus);
         map.put("orderList", order);
         return "myOrder";
     }
@@ -46,6 +47,11 @@ public class OrderApi {
         return "orderDetails";
     }
 
+    @RequestMapping("/confirmAcceptOrder")
+    public String confirmAcceptOrder(String orderCode) {
+        Order order = orderMapper.updateOrderStatus(orderCode);
+        return "redirect:myOrder";
+    }
 
 
     /**
@@ -54,10 +60,10 @@ public class OrderApi {
     @RequestMapping("/addOrder")
     @ResponseBody()
     public String addOrder(HttpServletRequest request, Integer goodsId, Integer goodsNum, ModelMap map) {
-        user user = (user)request.getSession().getAttribute("user");
+        user user = (user) request.getSession().getAttribute("user");
         Goods goods = goodsMapper.queryGoodsDetails(goodsId);
         int res;
-        String orderCode  = UUID.randomUUID().toString().replace("-", "");
+        String orderCode = UUID.randomUUID().toString().replace("-", "");
         Address address = addressMapper.selectDefaultAddess(user.getId());
         if (goods != null) {
             Order order = new Order();
@@ -87,4 +93,6 @@ public class OrderApi {
         }
         return orderCode;
     }
+
+
 }

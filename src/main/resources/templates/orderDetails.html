@@ -73,4 +73,12 @@
 			</div>
 		</div>
 	</body>
+	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
+	<script th:src="@{static/js/rem.min.js}" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+        $(".button").click(function(){
+            console.log("go to 订单列表");
+            location.href = "myOrder";
+        });
+	</script>
 </html>
