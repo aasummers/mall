@@ -5,8 +5,7 @@
 		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
 		<meta content="email=no" name="format-detection" />
 		<meta name="format-detection" content="telephone=no" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<!--页面自适应-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<script type="text/javascript">
 			var iScale = 1;
 			iScale = iScale / window.devicePixelRatio;
@@ -14,74 +13,64 @@
 			var iWidth = document.documentElement.clientWidth;
 			document.getElementsByTagName('html')[0].style.fontSize = iWidth / 31.5 + 'px';
 		</script>
-		<link rel="stylesheet" type="text/css" th:href="@{static/css/indentParticulars.css}"/>
-		<title></title>
+		<link rel="stylesheet" type="text/css" th:href="@{static/css/ddxq.css}"/>
+		<title>订单详情</title>
 	</head>
 	<body>
 		<header class="register">
-			<i class="iconfont" onclick="javascript:history.go(-1);return false;">&#xe697;</i><span class="text">订单详情</span><a href="tel:15609350999"  class="iconfont phoneNum">&#xe6ed;</a>
+			<i class="iconfont" onclick="javascript:history.go(-1);return false;">&#xe697;</i><span class="text">订单详情</span>
 		</header>
 		<div class="contentBox">
-			<p class="tilName"><span class="text">订单编号：<em th:text="${order.orderCode}"></em></span><span class="orderFormState">待支付</span></p>
-			<div class="messageBox">
-				<p class="message">
-					<a href="订单确认.html" class="store">
-						<span class="imgBox"><img th:src="@{static/images/fd3a8462080c71f60f2581c2e7c1d3f43010.jpeg.webp}"/></span><span class="text">满月楼大酒店</span>
+			<!--无收货地址-->
+			<!--<div class="address">
+				<a href="###" class="lines">
+					<div class="placeAdd">
+						<i class="iconfont left">&#xeb87;</i>
+						<span class="placeAddress">请输入收货地址</span>
+					</div>
 						<i class="iconfont right">&#xe6a7;</i>
-					</a>
 					
-				</p>
-				<div class="commodityMessage" th:each="orderGoods : ${order.orderGoodsList}">
-
-					<p class="box">
-						<span class="commodityName" th:text="${orderGoods.goodsname}"></span>
-						<span class="commodityNum">×4</span>
-						<span class="commodityPrice">￥<em th:text="${orderGoods.goodspromotionprice}">68</em></span>
+				</a>
+			</div>-->
+			<!--有收获地址-->
+			<div class="addressMsg">
+				<a href="###">
+					<p class="message ">
+						<i class="iconfont left">&#xe600;</i>
+						<span class="text">收货人：<em th:text="${order.recUserName}">丁先生</em></span><span class="text right" th:text="${order.recUserPhone}">18001393832</span>
 					</p>
-					<!--<p class="box">
-						<span class="commodityName">马氏巧克力酥脆米花糖Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptatibus necessitatibus modi tenetur assumenda cumque facere quis possimus adipisci nesciunt. Laborum dolorem et tempore doloribus distinctio nobis quam minus iste?</span>
-						<span class="commodityNum">×4</span>
-						<span class="commodityPrice">￥<em>68</em></span>
-					</p>-->
-					<p class="aggregateBox">
-						<span class="aggregateNum">总计：￥<em>156</em></span>
-						<span class="moneyNum">实付：<em>￥156</em></span>
+					<p class="message ">
+						<span class="text" th:text="${order.recUserAddress}">北京市 亦庄 经海五路科创十一街数字工场6号楼7层</span>
 					</p>
+					<i class="iconfont right">&#xe6a7;</i>
+				</a>
+			</div>
+			<!--订单编号栏-->
+			<div class="orderBox">
+				<span class="orderNumber">订单编号：<em class="number" th:text="${order.orderCode}">23753321</em></span>
+				<span class="orderState">待收货</span>
+			</div>
+			<!--订单详细内容-->
+			<div class="orderContent" th:each="goods : ${order.orderGoodsList}">
+				<div class="leftImgBox">
+					<img th:src="${goods.goodsimg}"/>
+				</div>
+				<!--产品信息-->
+				<div class="rightTextBox">
+					<p class="textContext" th:text="${goods.goodsname}">西门子开关插座面板—开五孔插座 86型插座5UB01081CC1</p>
+					<p class="priceNum"><em class="currentPrice" th:text="${goods.goodspromotionprice}">￥49.8</em><em class="originalPrice" th:text="${goods.goodsprice}">￥119.00</em></p>
 				</div>
 			</div>
-			<p class="tilName">配送信息</p>
-			<div class="messageBox">
-				<p class="address">
-					<span class="text">配送地址</span><span class="phoneNum">丁（先生）<em>13241115232</em></span>
-					<span class="siteTxt">北京市大兴区  某某镇hello小区3单元201</span>
-				</p>
-				<p class="address">
-					<span class="text">配送服务</span><span class="phoneNum">由  商家  提供配送服务</span>
-				</p>
-			</div>
-			<p class="tilName">订单信息</p>
-			<div class="messageBox">
-				<p class="address">
-					<span class="text">订单编号</span><span class="phoneNum">11521003325181235</span>
-				</p>
-				<p class="address">
-					<span class="text">订单时间</span><span class="phoneNum">2017-05-12 14:15:03</span>
-				</p>
-				<p class="address">
-					<span class="text">支付方式</span><span class="phoneNum">微信支付</span>
-				</p>
+			<!--下单时间-->
+			<p class="orderTime">邮递<em class="time">申通</em></p>
+			<p class="orderTime">下单时间<em class="time" th:text="${#dates.format(order.createTime,'yyyy-MM-dd HH:mm:ss')}">2017-09-26 16:07</em></p>
+			<!--底部订单确认栏-->
+			<!--使用固定定位;目的:撑开页面防止最下面的内容被底部确认栏覆盖-->
+			<div class="strut"></div>
+			<div class="affirm">
+				<p class="commodityNum">共计<em class="numbers">1</em>件商品  总计：￥<em class="money">119.00</em></p>
+				<p class="buttonConfirm"><span class="button">确认收货</span></p>
 			</div>
 		</div>
-		<!--待支付页面按钮-->
-		<!--<p class="awaitPayment"><a href="###" class="btn cancel">取消订单</a><a href="###" class="btn payment">付款</a></p>-->
-		
-		<!--确认收货按钮-->
-		<p class="affirmReceive"><a href="###" class="btn affirm">确认订单</a></p>
 	</body>
-	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		$('.contentBox .tabBox li').click(function(){
-			$(this).addClass("active").siblings().removeClass("active");
-		});
-	</script>
 </html>

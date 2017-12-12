@@ -1,12 +1,11 @@
 package com.chengliang.mall.web;
 
 import com.alibaba.fastjson.JSONObject;
+import com.chengliang.mall.dao.AddressMapper;
 import com.chengliang.mall.dao.GoodsMapper;
 import com.chengliang.mall.dao.OrderGoodsMapper;
 import com.chengliang.mall.dao.OrderMapper;
-import com.chengliang.mall.entity.Goods;
-import com.chengliang.mall.entity.Order;
-import com.chengliang.mall.entity.OrderGoods;
+import com.chengliang.mall.entity.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.UUID;
 
@@ -22,6 +22,8 @@ import java.util.UUID;
 public class OrderApi {
     @Autowired
     private OrderGoodsMapper orderGoodsMapper;
+    @Autowired
+    private AddressMapper addressMapper;
     @Autowired
     public GoodsMapper goodsMapper;
     @Autowired
@@ -44,14 +46,6 @@ public class OrderApi {
         return "orderDetails";
     }
 
-    @RequestMapping("/orderDetailsNoAddress")
-    public String orderDetailsNoAddress(String orderCode, ModelMap map) {
-        Order order = orderMapper.selectOrderByOrderCode(orderCode);
-        List<OrderGoods> goods = orderGoodsMapper.selectOrderGoodsByOrderCode(order.getOrderCode());
-        order.setOrderGoodsList(goods);
-        map.put("order", order);
-        return "orderDetails_noaddress";
-    }
 
 
     /**
@@ -59,16 +53,23 @@ public class OrderApi {
      */
     @RequestMapping("/addOrder")
     @ResponseBody()
-    public String addOrder(Integer goodsId, Integer goodsNum, ModelMap map) {
+    public String addOrder(HttpServletRequest request, Integer goodsId, Integer goodsNum, ModelMap map) {
+        user user = (user)request.getSession().getAttribute("user");
         Goods goods = goodsMapper.queryGoodsDetails(goodsId);
         int res;
         String orderCode  = UUID.randomUUID().toString().replace("-", "");
-
+        Address address = addressMapper.selectDefaultAddess(user.getId());
         if (goods != null) {
             Order order = new Order();
             order.setOrderCode(orderCode);
             order.setGoodsNum(goodsNum);
             order.setOrderStatus(0);
+            order.setUserId(user.getId());
+            order.setRecUserName(address.getRecUserName());
+            order.setRecUserPhone(address.getRecUserPhone());
+            order.setRecUserAddress(address.getRecUserAddress());
+            order.setGoodsNum(goodsNum);
+
             res = orderMapper.insertSelective(order);
 
             OrderGoods orderGoods = new OrderGoods();

@@ -53,4 +53,12 @@ public interface AddressMapper {
      */
     @Delete("delete from address where id = #{addressId}")
     int delAddress(Integer addressId);
+
+    /**
+     * 删除地址
+     * @param userId
+     * @return
+     */
+    @Select("select id, user_id userId, rec_user_name recUserName, rec_user_phone recUserPhone, rec_user_address recUserAddress, rec_user_area recUserArea, is_default isDefault  from address where user_id = #{userId} and is_default = 1;")
+    Address selectDefaultAddess(Integer userId);
 }
