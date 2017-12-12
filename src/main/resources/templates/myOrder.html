@@ -36,16 +36,16 @@
 				<div class="everyOrderForm">
 					
 					<!--每一条独立的状态开头-->
-					<div class="everyList">
+					<div class="everyList" th:each="order : ${orderList}">
 						<p class="common orderForm">
 							<span class="numBox">
-								订单编号：<em class="number">407</em>
+								订单编号：<em class="number" th:text="${order.orderCode}">401</em>
 							</span>
-							<span class="time right">2017-09-26 11:23</span>
+							<span class="time right" th:text="${#dates.format(order.createTime,'yyyy-MM-dd HH:mm:ss')}">2017-09-26 11:23</span>
 						</p>
 						<p class="common orderForm">
 							<span class="numBox">
-								共<em class="number">1</em>件商品
+								共<em class="number" th:text="${order.goodsNum}">1</em>件商品
 							</span>
 							<span class="time right">实付：￥<em class="money">34</em></span>
 						</p>
@@ -56,7 +56,7 @@
 					<div class="everyList">
 						<p class="common orderForm">
 							<span class="numBox">
-								订单编号：<em class="number">407</em>
+								订单编号：<em class="number">401</em>
 							</span>
 							<span class="time right">2017-09-26 11:23</span>
 						</p>
@@ -77,7 +77,7 @@
 					<div class="everyList">
 						<p class="common orderForm">
 							<span class="numBox">
-								订单编号：<em class="number">407</em>
+								订单编号：<em class="number">402</em>
 							</span>
 							<span class="time right">2017-09-26 11:23</span>
 						</p>
@@ -96,7 +96,7 @@
 					<div class="everyList">
 						<p class="common orderForm">
 							<span class="numBox">
-								订单编号：<em class="number">407</em>
+								订单编号：<em class="number">403</em>
 							</span>
 							<span class="time right">2017-09-26 11:23</span>
 						</p>
@@ -116,7 +116,7 @@
 					<div class="everyList">
 						<p class="common orderForm">
 							<span class="numBox">
-								订单编号：<em class="number">407</em>
+								订单编号：<em class="number">404</em>
 							</span>
 							<span class="time right">2017-09-26 11:23</span>
 						</p>

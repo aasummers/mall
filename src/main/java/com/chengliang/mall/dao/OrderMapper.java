@@ -18,6 +18,10 @@ public interface OrderMapper {
     @Select("select * from `order` where userId = #{userId} and orderStatus = #{status}")
     List<Order> selectOrderListByUserId(@Param("userId") Integer userId, @Param("status") Integer status);
 
+    @Select("select * from `order` where userId = #{userId}")
+    List<Order> selectAllOrderListByUserId(@Param("userId") Integer userId);
+
+
     @Select("select * from `order` where orderCode = #{orderCode};")
     Order selectOrderByOrderCode(String orderCode);
 
