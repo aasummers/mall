@@ -19,7 +19,9 @@ public class UserApi {
 
 
     @RequestMapping("/toLogin")
-    public String toLogin(){
+    public String toLogin(HttpServletRequest request, ModelMap map){
+        String callBack = String.valueOf(request.getAttribute("callback"));
+        map.put("callback", callBack);
         return "login";
     };
 
@@ -31,7 +33,8 @@ public class UserApi {
      */
     @RequestMapping("/login")
     @ResponseBody()
-    public String login(HttpServletRequest request, String userName, String passWord){
+    public String login(HttpServletRequest request, String userName, String passWord, String callback){
+        String base = request.getAttribute("base").toString();
         user user = new user();
         user.setName(userName);
         user.setPassword(passWord);
@@ -39,29 +42,30 @@ public class UserApi {
         if(res!=null){
             request.getSession().setAttribute("user", res);
         }
-        return res+"";
+        return base+callback;
     };
 
     /**
      * 个人中心
-     * @param userId
      * @return
      */
     @RequestMapping("/center")
-    public String userInfo(Integer userId, ModelMap map){
-        user res = userMapper.userInfo(userId);
+    public String userInfo(HttpServletRequest request, ModelMap map){
+        user user = (user) request.getSession().getAttribute("user");
+        user res = userMapper.userInfo(user.getId());
         map.put("user", res);
         return "center";
     }
 
     /**
      * 跳转至修改密码页面
-     * @param userId
+     * @param
      * @return
      */
     @RequestMapping("/toChangePW")
-    public String toChangePW(Integer userId, ModelMap map){
-        map.put("userId", userId);
+    public String toChangePW(HttpServletRequest request, ModelMap map){
+        user user = (user) request.getSession().getAttribute("user");
+        map.put("userId", user.getId());
         return "changePW";
     }
 

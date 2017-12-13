@@ -73,10 +73,11 @@
 			<!--<p class="explain">
 				<span class="text">说明:注册/登录说明您已同意<a href="###">《美团用户协议》</a></span>
 			</p>-->
+			<input type="hidden" th:value="${callback}" id="callback"/>
 		</div>
 	</body>
 	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
+	<script th:inline="javascript">
         $('.contentBox .mode li').click(function(){
             var index=$(this).index();
             $(this).addClass("active").siblings().removeClass("active");
@@ -122,12 +123,13 @@
 		});
 		$(".btnBox button").click(function(){
             var phone = $(".phone").val();
+            var callback = $("#callback").val();
             console.log(phone);
             $.ajax({
                 //提交数据的类型 POST GET
                 type:"POST",
                 //提交的网址
-                url:"/mall/login",
+                url:"/mall/login?callback="+callback,
                 //提交的数据
                 data:{userName:phone,
                       passWord:"123456"},
@@ -136,7 +138,7 @@
                 success:function(data){
                     console.log("登录返回值"+data);
                     if(data){
-                        location.href = "center?userId=1";
+                        location.href = data ? data : "center";
 					}
                 }
             });

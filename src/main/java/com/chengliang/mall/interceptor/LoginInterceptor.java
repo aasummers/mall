@@ -19,10 +19,14 @@ public class LoginInterceptor implements HandlerInterceptor {
          */
         user managerUser = (user) request.getSession().getAttribute("user");
 
-
+        String path = request.getServletPath();
+        String query = request.getQueryString();
         if (managerUser == null) {//如果session中没有用户的信息，跳转到登录页面，内部网页不能访问
             System.out.println("ManagerUserInterceptor---->>>>>>preHandle");
-            request.getRequestDispatcher("/toLogin").forward(request, response);
+            request.setAttribute("callback", path+"?"+query);
+            String callback = path + "?" + query;
+            request.getRequestDispatcher("/toLogin?callback=" + callback).forward(request, response);
+
             return false;
         } else {
             request.setAttribute("user", managerUser);
