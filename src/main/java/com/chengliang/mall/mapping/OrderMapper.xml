@@ -9,6 +9,7 @@
     <result column="user_id" jdbcType="INTEGER" property="userId" />
     <result column="rec_user_name" jdbcType="VARCHAR" property="recUserName" />
     <result column="rec_user_phone" jdbcType="VARCHAR" property="recUserPhone" />
+    <result column="orderStatus" jdbcType="INTEGER" property="orderStatus" />
     <result column="rec_user_address" jdbcType="VARCHAR" property="recUserAddress" />
   </resultMap>
   <insert id="insert" parameterType="com.chengliang.mall.entity.Order">

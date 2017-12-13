@@ -27,4 +27,7 @@ public interface OrderMapper {
 
     @Update("update `order` set orderStatus = 4 where orderCode = #{orderCode};")
     Order updateOrderStatus(String orderCode);
+
+    @Select("SELECT count(1) FROM `order` where TO_DAYS(createTime) = TO_DAYS(now());")
+    int todayOrderCount();
 }

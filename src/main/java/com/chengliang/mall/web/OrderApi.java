@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -39,6 +42,7 @@ public class OrderApi {
             order = orderMapper.selectOrderListByUserId(user.getId(), orderStatus);
         }
         map.put("orderList", order);
+        map.put("status", orderStatus==null? 0 : orderStatus);
         return "myOrder";
     }
 
@@ -67,13 +71,13 @@ public class OrderApi {
         user user = (user) request.getSession().getAttribute("user");
         Goods goods = goodsMapper.queryGoodsDetails(goodsId);
         int res;
-        String orderCode = UUID.randomUUID().toString().replace("-", "");
+        String orderCode = orderNo();
         Address address = addressMapper.selectDefaultAddess(user.getId());
         if (goods != null) {
             Order order = new Order();
             order.setOrderCode(orderCode);
             order.setGoodsNum(goodsNum);
-            order.setOrderStatus(0);
+            order.setOrderStatus(1);
             order.setUserId(user.getId());
             order.setRecUserName(address.getRecUserName());
             order.setRecUserPhone(address.getRecUserPhone());
@@ -98,5 +102,29 @@ public class OrderApi {
         return orderCode;
     }
 
+    /**
+     * 穿件订单编号
+     * @return
+     */
+    private String orderNo(){
+        String res = "";
+        LocalDateTime today = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyMMdd");
+        res = today.format(formatter);
+        int count = orderMapper.todayOrderCount() + 1;
+        String relex = leftPad(count+"",5,'0');
+        return res+relex;
+    }
 
+    public static String leftPad(String str,int length,char ch){
+        char[] chs = new char[length];
+        Arrays.fill(chs, ch);//把数组chs填充成ch
+        char[] src = str.toCharArray();//把字符串转换成字符数组
+        System.arraycopy(src, 0, chs,
+                length-src.length,src.length);
+        //从src的0位置开始复制到chs中从length-src.length到src.lengtth
+        //右填充
+        return new String(chs);
+
+    }
 }

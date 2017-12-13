@@ -120,7 +120,7 @@ public class Order implements Serializable {
         return orderStatus;
     }
 
-    public void setOrderStatus(Integer goodsNum) {
+    public void setOrderStatus(Integer orderStatus) {
         this.orderStatus = orderStatus;
     }
 
