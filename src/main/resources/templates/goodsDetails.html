@@ -54,12 +54,12 @@
 					<p class="purchaseQuantity">
 						<em class="text">购买数量</em>
 						<span class="subtract" onclick="subtract()">-</span>
-						<input type="text" name="" id="number" value="0" readonly="readonly"/>
+						<input type="text" name="" id="number" value="1" readonly="readonly"/>
 						<span class="add" onclick="add()">+</span>
 					</p>
 				</div>
 				<a href="###" class="imgbox">
-					<div th:text="${res.descripe}"></div>
+					<div th:utext="${res.descripe}"></div>
 				</a>
 			</div>
 			<p class="btnBox">
@@ -107,7 +107,11 @@
                 //成功返回之后调用的函数
                 success:function(data){
                     console.log("登录返回值"+data);
-                    if(data){
+                    var fdStart = data.indexOf("unlogin?");
+                    if(fdStart==0){
+                        var callback = data.replace("unlogin?", "");
+						location.href = "/mall/toLogin?callback="+callback;
+					}else{
                         location.href = "orderDetails?orderCode="+data;
                     }
                 }

@@ -20,8 +20,8 @@ public class InterceptorConfig extends WebMvcConfigurerAdapter {
         registry.addInterceptor(loginInterceptor)
                 .addPathPatterns("/*")
                 .excludePathPatterns("/toLogin*")
-                .excludePathPatterns("/login")
-                .excludePathPatterns("/index")
+                .excludePathPatterns("/login*")
+                .excludePathPatterns("/index*")
                 .excludePathPatterns("/goodsDetails*");
         super.addInterceptors(registry);
     }

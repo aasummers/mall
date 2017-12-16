@@ -21,7 +21,7 @@ public class IndexApi {
     public GoodsMapper goodsMapper;
     @Autowired
     public AdvertMapper advertMapper;
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String index(ModelMap map) {
         List<Goods> goodsList = goodsMapper.queryIndexGoods();
         List<Advert> advertList = advertMapper.advertList();
