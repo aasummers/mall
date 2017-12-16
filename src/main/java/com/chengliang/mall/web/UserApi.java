@@ -41,6 +41,8 @@ public class UserApi {
         user res = userMapper.userExist(user);
         if(res!=null){
             request.getSession().setAttribute("user", res);
+        }else{
+            return null;
         }
         return base+callback;
     };

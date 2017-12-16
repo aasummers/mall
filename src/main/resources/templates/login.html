@@ -140,6 +140,8 @@
                     console.log("登录返回值"+data);
                     if(data){
                         location.href = data ? data : "center";
+					}else{
+                        alert("用户名或密码错误");
 					}
                 }
             });

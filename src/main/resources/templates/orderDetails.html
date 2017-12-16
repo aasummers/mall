@@ -72,13 +72,15 @@
 				<p class="buttonConfirm"><span class="button">确认收货</span></p>
 			</div>
 		</div>
+	<input type="hidden" th:value="${order.orderCode}" id="orderCode"/>
 	</body>
 	<script th:src="@{static/js/jquery.min.js}" type="text/javascript" charset="utf-8"></script>
 	<script th:src="@{static/js/rem.min.js}" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
         $(".button").click(function(){
+            var orderCode = $("#orderCode").val();
             console.log("go to 订单列表");
-            location.href = "myOrder";
+            location.href = "confirmAcceptOrder?orderCode="+orderCode;
         });
 	</script>
 </html>

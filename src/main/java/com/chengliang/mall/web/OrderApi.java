@@ -57,7 +57,7 @@ public class OrderApi {
 
     @RequestMapping("/confirmAcceptOrder")
     public String confirmAcceptOrder(String orderCode) {
-        Order order = orderMapper.updateOrderStatus(orderCode);
+        int order = orderMapper.updateOrderStatus(orderCode);
         return "redirect:myOrder";
     }
 
