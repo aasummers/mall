@@ -19,9 +19,9 @@ public class UserApi {
 
 
     @RequestMapping("/toLogin")
-    public String toLogin(HttpServletRequest request, ModelMap map){
-        String callBack = String.valueOf(request.getAttribute("callback"));
-        map.put("callback", callBack);
+    public String toLogin(HttpServletRequest request, ModelMap map, String callback){
+//        String callBack = String.valueOf(request.getAttribute("callback"));
+        map.put("callback", callback);
         return "login";
     };
 
