@@ -22,12 +22,30 @@
 				<a href="###" class="iconfont">&#xe697;</a><span class="text">个人中心</span><span class="manage"></span>
 			</header>
 			<!--顶部切换栏-->
-			<div class="orderFormParticulars">
-				<ul class="tabList">
+			<div class="orderFormParticulars" th:switch="${status}">
+				<ul class="tabList" th:case="0">
 					<li class="everyState active" onclick="orderList(0)">全部</li>
 					<li class="everyState" onclick="orderList(1)">待发货</li>
 					<li class="everyState" onclick="orderList(2)">待收货</li>
 					<li class="everyState" onclick="orderList(3)">已完成</li>
+				</ul>
+				<ul class="tabList" th:case="1">
+					<li class="everyState" onclick="orderList(0)">全部</li>
+					<li class="everyState active" onclick="orderList(1)">待发货</li>
+					<li class="everyState" onclick="orderList(2)">待收货</li>
+					<li class="everyState" onclick="orderList(3)">已完成</li>
+				</ul>
+				<ul class="tabList" th:case="2">
+					<li class="everyState" onclick="orderList(0)">全部</li>
+					<li class="everyState" onclick="orderList(1)">待发货</li>
+					<li class="everyState active" onclick="orderList(2)">待收货</li>
+					<li class="everyState" onclick="orderList(3)">已完成</li>
+				</ul>
+				<ul class="tabList" th:case="3">
+					<li class="everyState" onclick="orderList(0)">全部</li>
+					<li class="everyState" onclick="orderList(1)">待发货</li>
+					<li class="everyState" onclick="orderList(2)">待收货</li>
+					<li class="everyState active" onclick="orderList(3)">已完成</li>
 				</ul>
 			</div>
 			<!--订单内容栏-->
