@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="orderForm">
-                <a th:href="@{myAddress}" class="imgbox">
+                <a th:href="@{myOrder}" class="imgbox">
                     <!--需要切图添加-->
                     <img th:src="@{static/images/wap/waphomepagenav02.png}"/>
                     <span>我的订单</span>
@@ -53,7 +53,7 @@
 <div class="imgcarousel">
     <div class="swiper-container one">
         <div class="swiper-wrapper">
-            <img th:each="advert : ${advertList}" th:src="${advert.image}" class="swiper-slide">
+            <img th:each="advert : ${advertList}" th:src="${advert.image}" class="swiper-slide" th:onclick="'gohref('+${advert.tourl}+')'"/>
         </div>
         <!-- 分页器 -->
         <div class="swiper-pagination one"></div>
@@ -170,5 +170,9 @@
         autoplayDisableOnInteraction:false,
         paginationClickable :true,
     });
+
+    function gohref(link) {
+        location.href = "goodsDetails?goodsId="+link;
+    }
 </script>
 </html>
