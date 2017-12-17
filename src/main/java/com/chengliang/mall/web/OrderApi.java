@@ -73,6 +73,13 @@ public class OrderApi {
         int res;
         String orderCode = orderNo();
         Address address = addressMapper.selectDefaultAddess(user.getId());
+        if(address==null){
+            List<Address> addressList = addressMapper.addressList(user.getId());
+            if(addressList==null || addressList.isEmpty()){
+                return "noaddress";
+            }
+            address = addressList.get(0);
+        }
         if (goods != null) {
             Order order = new Order();
             order.setOrderCode(orderCode);
