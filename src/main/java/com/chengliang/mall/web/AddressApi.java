@@ -98,6 +98,18 @@ public class AddressApi {
         return "redirect:myAddress?userId="+address.getUserId();
     }
 
+    @RequestMapping("/setDefaultAddress")
+    public String setDefaultAddress(HttpServletRequest request,Integer addressId) {
+        String res = "1";
+        try {
+            user user = (user) request.getSession().getAttribute("user");
+            updateDefaultAddress(user.getId(), addressId);
+        }catch (Exception e){
+            res = "0";
+        }
+        return res;
+    }
+
     public Integer defaultAddressId(Address address) {
         Integer res = null;
         if (address.getIsDefault() == 1) {
