@@ -145,12 +145,14 @@ header {
   border-bottom: 1px solid #ddd;
   padding: 0.84000084rem 0rem;
 }
-.contentBox .phoneNnmber .phone {
-  width: 18.9000189rem;
-  height: 2.35200235rem;
-  line-height: 2.35200235rem;
-  font-size: 1.34400134rem;
-  text-indent: 2em;
+.contentBox .phoneNnmber .littleBox {
+  line-height: 3.36000336rem;
+  height: 3.36000336rem;
+}
+.contentBox .authCode,
+.contentBox .phone {
+  line-height: 3.19200319rem;
+  height: 3.19200319rem;
 }
 .contentBox .littleBox {
   position: relative;
@@ -187,7 +189,8 @@ header {
   color: #fff;
   background-color: #13c3aa;
 }
-.contentBox .authCode {
+.contentBox .authCode,
+.contentBox .phone {
   width: 28.98002898rem;
   font-size: 1.34400134rem;
   text-indent: 2em;

@@ -19,7 +19,7 @@
 </head>
 <body>
 <header class="register">
-	<i class="iconfont">&#xe697;</i><span class="text">我的收货地址</span><span class="manage">管理</span>
+	<i class="iconfont" onclick="javascript:history.go(-1);return false;>&#xe697;</i><span class="text">我的收货地址</span><span class="manage">管理</span>
 </header>
 <div class="contentBox">
 	<div class="messageBox" th:each="address : ${addressList}">
