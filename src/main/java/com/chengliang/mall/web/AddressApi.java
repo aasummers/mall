@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -98,7 +99,8 @@ public class AddressApi {
         return "redirect:myAddress?userId="+address.getUserId();
     }
 
-
+    @RequestMapping("/setDefaultAddress")
+    @ResponseBody()
     public String setDefaultAddress(HttpServletRequest request,Integer addressId) {
         String res = "1";
         try {
