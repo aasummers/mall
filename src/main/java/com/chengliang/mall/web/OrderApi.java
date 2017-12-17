@@ -98,8 +98,8 @@ public class OrderApi {
             orderGoods.setGoodsId(goodsId);
             orderGoods.setGoodsimg(goods.getImage());
             orderGoods.setGoodsname(goods.getName());
-            orderGoods.setGoodsprice(goods.getPromotionPrice());
-
+            orderGoods.setGoodsprice(goods.getPrice());
+            orderGoods.setGoodspromotionprice(goods.getPromotionPrice());
             orderGoodsMapper.insertSelective(orderGoods);
 
         } else {
