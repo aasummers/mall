@@ -11,6 +11,7 @@
     <result column="rec_user_phone" jdbcType="VARCHAR" property="recUserPhone" />
     <result column="orderStatus" jdbcType="INTEGER" property="orderStatus" />
     <result column="rec_user_address" jdbcType="VARCHAR" property="recUserAddress" />
+    <result column="orderPrice" jdbcType="DOUBLE" property="orderPrice" />
   </resultMap>
   <insert id="insert" parameterType="com.chengliang.mall.entity.Order">
     insert into `order` ( orderCode,
@@ -53,6 +54,9 @@
       <if test="orderStatus != null">
         orderStatus,
       </if>
+      <if test="orderPrice != null">
+        orderPrice
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="orderCode != null">
@@ -80,7 +84,10 @@
         #{goodsNum,jdbcType=VARCHAR},
       </if>
       <if test="orderStatus != null">
-        #{orderStatus}
+        #{orderStatus},
+      </if>
+      <if test="orderPrice != null">
+        #{orderPrice}
       </if>
     </trim>
   </insert>

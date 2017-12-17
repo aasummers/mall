@@ -83,7 +83,7 @@ public class OrderApi {
             order.setRecUserPhone(address.getRecUserPhone());
             order.setRecUserAddress(address.getRecUserAddress());
             order.setGoodsNum(goodsNum);
-
+            order.setOrderPrice(goodsNum * goods.getPromotionPrice());
             res = orderMapper.insertSelective(order);
 
             OrderGoods orderGoods = new OrderGoods();

@@ -30,6 +30,8 @@ public class Order implements Serializable {
     private Integer goodsNum;
     @Column(name = "orderStatus")
     private Integer orderStatus;
+    @Column(name = "orderPrice")
+    private Double orderPrice;
 
     private List<OrderGoods> orderGoodsList;
 
@@ -124,4 +126,11 @@ public class Order implements Serializable {
         this.orderStatus = orderStatus;
     }
 
+    public Double getOrderPrice() {
+        return orderPrice;
+    }
+
+    public void setOrderPrice(Double orderPrice) {
+        this.orderPrice = orderPrice;
+    }
 }

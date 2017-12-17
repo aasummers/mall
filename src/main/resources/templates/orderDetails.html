@@ -48,7 +48,11 @@
 			<!--订单编号栏-->
 			<div class="orderBox">
 				<span class="orderNumber">订单编号：<em class="number" th:text="${order.orderCode}">23753321</em></span>
-				<span class="orderState">待收货</span>
+				<div th:switch="${order.orderStatus}">
+					<span class="orderState" th:case="1">待发货</span>
+					<span class="orderState" th:case="2">待收货</span>
+					<span class="orderState" th:case="3">已完成</span>
+				</div>
 			</div>
 			<!--订单详细内容-->
 			<div class="orderContent" th:each="goods : ${order.orderGoodsList}">
@@ -67,9 +71,10 @@
 			<!--底部订单确认栏-->
 			<!--使用固定定位;目的:撑开页面防止最下面的内容被底部确认栏覆盖-->
 			<div class="strut"></div>
-			<div class="affirm">
-				<p class="commodityNum">共计<em class="numbers">1</em>件商品  总计：￥<em class="money">119.00</em></p>
-				<p class="buttonConfirm"><span class="button">确认收货</span></p>
+			<div class="affirm" th:switch="${order.orderStatus}">
+				<p class="commodityNum">共计<em class="numbers" th:value="${order.goodsNum}"></em>件商品  总计：￥<em class="money" th:text="${order.orderPrice}">119.00</em></p>
+				<p class="buttonConfirm" th:case="1"><span class="button">确认收货</span></p>
+				<p class="buttonConfirm" th:case="*"></p>
 			</div>
 		</div>
 	<input type="hidden" th:value="${order.orderCode}" id="orderCode"/>

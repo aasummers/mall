@@ -20,7 +20,6 @@ public class LoginInterceptor implements HandlerInterceptor {
          * 从session中获取用户信息
          */
         user managerUser = (user) request.getSession().getAttribute("user");
-
         String path = request.getServletPath();
         String query = request.getQueryString();
         if (managerUser == null) {//如果session中没有用户的信息，跳转到登录页面，内部网页不能访问
@@ -28,11 +27,15 @@ public class LoginInterceptor implements HandlerInterceptor {
 //            request.setAttribute("callback", path+"?"+query);
 //            String callback = path + "?" + query;
 //            response.sendRedirect(base+"/toLogin?callback=" + callback);
-
+            String referer = request.getHeader("referer");
+            System.out.println("-------------->"+referer);
             String XRequested = request.getHeader("X-Requested-With");
             if ("XMLHttpRequest".equalsIgnoreCase(XRequested)) {
                 ServletOutputStream out = response.getOutputStream();
                 String callback = base + "/" + path + "?" + query;;
+                if(referer.contains("goodsDetails")){
+                    callback = "/"+referer.substring(referer.indexOf("goodsDetails"));
+                }
                 out.print("unlogin?" + callback);//返回给前端页面的未登陆标识
                 out.flush();
                 out.close();
