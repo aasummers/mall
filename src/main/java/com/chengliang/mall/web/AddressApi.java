@@ -98,7 +98,7 @@ public class AddressApi {
         return "redirect:myAddress?userId="+address.getUserId();
     }
 
-    @RequestMapping("/setDefaultAddress")
+
     public String setDefaultAddress(HttpServletRequest request,Integer addressId) {
         String res = "1";
         try {
